@@ -9,15 +9,26 @@
     font-size: 48px;
     line-height: 70px;
     color: #262E36;
+
+    @media(max-width: 480px){
+      font-size: 24px;
+      line-height: 24px;
+    }
   }
 
   h2 {
     margin-top: 0;
+
+    @media(max-width: 480px){
+      font-size: 14px;
+      line-height: 14px;
+    }
   }
 
   &-row {
     display: flex;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 
     &-reverse {
       flex-direction: row-reverse;
@@ -25,15 +36,27 @@
       .buisness-col-text {
         padding-right: 0px;
         padding-left: 50px;
+
+        @media(max-width: 768px){
+          padding-left: 0px;
+        }
       }
     }
   }
 
   &-col {
       width: 50%;
+      min-height: 200px;
+      @media(max-width: 768px){
+        width: 100%;
+      }
 
       &-text {
         padding-right: 50px;
+
+        @media(max-width: 768px){
+            padding-right: 0px;
+        }
       }
   }
 

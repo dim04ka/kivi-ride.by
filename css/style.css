@@ -574,28 +574,62 @@
     font-weight: bold;
     font-size: 3rem;
     line-height: 4.375rem;
-    color: #262E36;
+    color: #262E36
   }
+@media(max-width: 480px){
+
+  .buisness h1 {
+      font-size: 1.5rem;
+      line-height: 1.5rem
+  }
+    }
 .buisness h2 {
-    margin-top: 0;
+    margin-top: 0
   }
+@media(max-width: 480px){
+
+  .buisness h2 {
+      font-size: 0.875rem;
+      line-height: 0.875rem
+  }
+    }
 .buisness-row {
     display: flex;
     margin-bottom: 20px;
+    flex-wrap: wrap;
   }
 .buisness-row-reverse {
       flex-direction: row-reverse;
     }
 .buisness-row-reverse .buisness-col-text {
         padding-right: 0px;
-        padding-left: 50px;
+        padding-left: 50px
       }
+@media(max-width: 768px){
+
+      .buisness-row-reverse .buisness-col-text {
+          padding-left: 0px
+      }
+        }
 .buisness-col {
       width: 50%;
+      min-height: 200px
   }
-.buisness-col-text {
-        padding-right: 50px;
+@media(max-width: 768px){
+
+  .buisness-col {
+        width: 100%
+  }
       }
+.buisness-col-text {
+        padding-right: 50px
+      }
+@media(max-width: 768px){
+
+      .buisness-col-text {
+            padding-right: 0px
+      }
+        }
 .buisness-img {
 
     width: 100%;
