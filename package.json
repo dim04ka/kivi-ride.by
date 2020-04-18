@@ -1,0 +1,39 @@
+{
+    "name": "dissertacija",
+    "version": "1.0.0",
+    "description": "landing",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "scripts": {
+        "build": "gulp build",
+        "watch": "gulp watch",
+        "js": "gulp js"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "browserify": "^16.2.3",
+        "cssnano": "^4.1.10",
+        "gulp": "^4.0.0",
+        "gulp-postcss": "^8.0.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-uglify": "^3.0.1",
+        "postcss-custom-media": "^7.0.7",
+        "postcss-custom-properties": "^8.0.9",
+        "postcss-import": "^12.0.1",
+        "postcss-inline-svg": "^3.1.1",
+        "postcss-nested": "^4.1.2",
+        "postcss-nesting": "^7.0.0",
+        "postcss-pxtorem": "^4.0.1",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0"
+    },
+    "dependencies": {
+        "gulp-file-include": "^2.1.0",
+        "jquery": "^3.4.0"
+    }
+}

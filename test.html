@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Average+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <input type="text" class="searchTextField" data-lat="" data-lng="">
+  <input type="text" class="searchTextField" data-lat="" data-lng="">
+
+
+  
+  <script>
+
+    function initMap() {
+
+      var inputs = $('.searchTextField');
+      var options = {
+          componentRestrictions: {country: 'by'}
+      };
+
+      $(inputs).each(function (i, element) {
+      var autocomplete = new google.maps.places.Autocomplete(element, options);
+      
+      
+      autocomplete.addListener('place_changed', function() {
+          
+          var place = autocomplete.getPlace(); 
+          console.log(place.geometry.location.lat());
+          console.log(place.geometry.location.lng());
+          });
+      });
+    }
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjPHFAzv1EpXDfAcMG-Bcj0QXl2_VfJ2M&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>

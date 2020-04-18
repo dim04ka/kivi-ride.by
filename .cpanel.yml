@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks: 
+    - export REPOPATH=/home/host0609/repositories/biz-up.by/*
+    - export SITEPATH=/home/host0609/biz-up.by/
+    - /bin/rsync -rav --exclude '.git' --exclude '.cpanel.yml' --del $REPOPATH $SITEPATH
