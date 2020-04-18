@@ -27,8 +27,8 @@
       var autocomplete = new google.maps.places.Autocomplete(element, options);
       
       
-      autocomplete.addListener('place_changed', function() {
-          
+      autocomplete.addListener('place_changed', function(e) {
+          console.log(e)
           var place = autocomplete.getPlace(); 
           console.log(place.geometry.location.lat());
           console.log(place.geometry.location.lng());
