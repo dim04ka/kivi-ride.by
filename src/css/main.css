@@ -225,9 +225,12 @@
       border-radius: 10px;
       padding: 12px 50px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       width: 100%;
+      min-height: 55px;
+      position: relative;
+      overflow: hidden;
 
       &-text {
         font-family: Roboto;
@@ -236,6 +239,16 @@
         font-size: 16px;
         line-height: 17px;
         color: rgba(38, 46, 54, 0.9);
+        text-decoration: none;
+        opacity: 0;
+        transition: all .3s;
+        position: absolute;
+        left: -200px;
+
+        &.active {
+          opacity: 1;
+          left:50px;
+        }
       }
 
       &-icon {
@@ -244,6 +257,10 @@
         background-image: url(../src/img/Arrow.png);
         background-repeat: no-repeat;
         background-size: contain;
+
+        @media(max-width: 480px){
+          display: none;
+        }
 
       }
 

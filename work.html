@@ -56,16 +56,16 @@
         <p>Работа с нами — это свобода управлять своим временем и доходом</p>
         <form action="" class="work-form">
           <div class="field">
-            <input type="text" class="work-input" placeholder="Ваше имя">
+            <input type="text" class="work-input" name="name" placeholder="Ваше имя" required>
           </div>
           <div class="field">
-            <input type="text" class="work-input" placeholder="+375291234567" required>
+            <input type="text" class="work-input" name="phone" placeholder="+375291234567" required>
           </div>
           <div class="field">
-            <input type="text" class="work-input" placeholder="Вид деятельности">
+            <input type="text" class="work-input" name="work" placeholder="Вид деятельности">
           </div>
           <div class="field">
-            <input type="text" class="work-input" placeholder="Комментарий">
+            <input type="text" class="work-input" name="comment" placeholder="Комментарий">
           </div>
           <div class="field">
             <input type="submit" class="work-btn" value="Отправить">
@@ -98,8 +98,9 @@
       <div class="footer-col">
         <div class="footer-up">Время работы администрации<br> Пн-Пт с 11 до 18</div>
         <div>
-         <a href="/" class="footer-download">Пользовательское соглашение</a><br>
-         <a href="/" class="footer-download">Договор публичной оферты</a> 
+         <a href="/files/doc1.docx" class="footer-download">Пользовательское соглашение</a><br>
+         <a href="/files/doc2.docx" class="footer-download">Политика конфиденциальности</a><br>
+         <a href="/files/doc3.docx" class="footer-download">Публичный договор</a>
         </div>
       </div>
       <div class="footer-col footer-col-verticalmiddle">
@@ -112,6 +113,15 @@
     <div class="footer-row footer-row-center">
       ©2020 
     </div>
+
+    <div class="modal">
+        <div class="modal-text">
+          <div class="modal-icon"></div>
+          Спасибо
+        </div>
+    </div>
+
+
   </div>
 </section>
 <!-- <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjPHFAzv1EpXDfAcMG-Bcj0QXl2_VfJ2M&libraries=places&callback=initMap" async defer></script> -->

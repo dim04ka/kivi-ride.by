@@ -58,6 +58,54 @@ var jQuery = require('jquery');
         $('.header-ul').toggleClass('active');
     })
 
+    //slider
+    function slider(classNameItems, speed) {
+        var active = 0;
+        var $items = document.querySelectorAll(classNameItems);
+        var slideInterval = setInterval(nextSlide,speed);
+
+        function nextSlide() {
+            $items[active].className = 'main-downBlock-text';
+            active = (active+1)%$items.length;
+            $items[active].className = 'main-downBlock-text active';
+        }
+    }
+
+    if($('.main-downBlock .main-downBlock-text').length != 0 ) {
+        slider('.main-downBlock .main-downBlock-text',2000)
+    }
+    
+
+
+    $('.work-form').submit(function(e){
+        e.preventDefault();
+
+        var $inputs = document.querySelectorAll('.work-input');
+        var $modal = document.querySelector('.modal');
+
+        var name = document.querySelector('.work-input[name=name]').value
+        var phone = document.querySelector('.work-input[name=phone]').value
+        var work = document.querySelector('.work-input[name=work]').value
+        var comment = document.querySelector('.work-input[name=comment]').value    
+
+        $inputs.forEach(function(el){
+            el.value = ''
+        })
+
+        $modal.style.cssText = " opacity: 1; z-index: 1;"
+
+        setTimeout(function(){
+            $modal.style.cssText = " opacity: 0; z-index: -1;"
+        },1500)
+        //showModal('Заявка отправлена',succes);
+
+
+        function showModal(text, icon) {
+
+        }
+
+
+    })
 
 
 

@@ -352,9 +352,12 @@
       border-radius: 10px;
       padding: 12px 50px;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       width: 100%;
+      min-height: 55px;
+      position: relative;
+      overflow: hidden;
 
     }
 .main .main-downBlock-text {
@@ -364,15 +367,31 @@
         font-size: 1rem;
         line-height: 1.0625rem;
         color: rgba(38, 46, 54, 0.9);
+        text-decoration: none;
+        opacity: 0;
+        transition: all .3s;
+        position: absolute;
+        left: -200px
       }
+.main .main-downBlock-text.active {
+          opacity: 1;
+          left:50px;
+        }
 .main .main-downBlock-icon {
         width: 47px;
         height: 17px;
         background-image: url(../src/img/Arrow.png);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: contain
 
       }
+@media(max-width: 480px){
+
+      .main .main-downBlock-icon {
+          display: none
+
+      }
+        }
 .footer {
   background-color: #262C2E;
   color: rgba(255, 255, 255, 0.6);
@@ -982,6 +1001,37 @@
     margin: 25px auto 0;
     display: block;
     cursor: pointer;
+  }
+.modal{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s;
+  opacity: 0;
+  z-index: -1;
+}
+.modal-icon {
+    background-image: url(../src/img/icon_succes.svg);
+    width: 80px;
+    height: 80px;
+    background-image: url(../src/img/icon_succes.svg);
+    background-size: cover;
+    margin: 0 auto 30px;
+  }
+.modal-text {
+    width: 250px;
+    min-height: 100px;
+    background: white;
+    color: black;
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 10px
   }
 /* @font-face {
     font-family: Determination;
