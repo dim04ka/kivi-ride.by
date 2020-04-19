@@ -1,7 +1,7 @@
 .main{
 
     height: 688px;
-    background-image: url(../src/img/speed2.png);
+    /* background-image: url(../src/img/speed2.png); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,6 +17,8 @@
       justify-content: space-between;
       padding-top: 25px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
 
       @media(max-width:1023px){
         padding: 20px 0;
@@ -265,7 +267,28 @@
       }
 
     }
-    
-
 }
 
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  z-index: 1;
+
+  @media(max-width: 1023px){
+    display: none;
+  }
+}
+
+.video-bg > video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}

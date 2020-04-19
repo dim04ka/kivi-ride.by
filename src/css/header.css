@@ -1,5 +1,7 @@
 .header {
     background-color: black;
+    position: relative;
+    z-index: 3;
 }
 .header-row {
     display: flex;

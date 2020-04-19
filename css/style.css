@@ -1,5 +1,7 @@
 .header {
     background-color: black;
+    position: relative;
+    z-index: 3;
 }
 .header-row {
     display: flex;
@@ -117,27 +119,25 @@
 .main{
 
     height: 688px;
-    background-image: url(../src/img/speed2.png);
+    /* background-image: url(../src/img/speed2.png); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover
-    
-
 }
 @media(max-width:1023px){
 .main{
       height: auto;
       background-image: none;
       background: linear-gradient(117.93deg, rgba(13, 135, 189, 0.3) 4.59%, rgba(132, 184, 92, 0.3) 95.47%)
-    
-
 }
     }
 .main-row {
       display: flex;
       justify-content: space-between;
       padding-top: 25px;
-      flex-wrap: wrap
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2
     }
 @media(max-width:1023px){
 
@@ -392,9 +392,34 @@
 
       }
         }
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  z-index: 1
+}
+@media(max-width: 1023px){
+.video-bg {
+    display: none
+}
+  }
+.video-bg > video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
 .footer {
   background-color: #262C2E;
   color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 2;
 }
 .footer a {
     text-decoration: none;
@@ -1061,5 +1086,9 @@ body, html {
         padding-left: 15px;
         padding-right: 15px
 }
+    }
+.container-face {
+        position: relative;
+        z-index: 2;
     }
 
