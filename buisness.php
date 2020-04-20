@@ -12,14 +12,37 @@
   <link href="https://fonts.googleapis.com/css?family=Average+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(55726756, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/55726756" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149865887-1"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+ 
+   gtag('config', 'UA-149865887-1');
+ </script>
 </head>
 <body>
   <section class="header">
     <div class="container">
         <div class="header-row">
             <div class="header-col header-col-logo">
-                <a href="/index.html">
+                <a href="/index.php">
                     <div class="header__logo"></div>
                 </a>
             </div>
@@ -27,19 +50,19 @@
                 <div class="header-btn"><span></span></div>
                 <ul class="header-ul">
                     <li class="header-li">
-                        <a href="/koncept.html" class="header-a">Концепция</a>
+                        <a href="/koncept.php" class="header-a">Концепция</a>
                     </li>
                     <li class="header-li">
-                        <a href="/buisness.html" class="header-a">Для бизнеса</a>
+                        <a href="/buisness.php" class="header-a">Для бизнеса</a>
                     </li>
                     <li class="header-li">
-                        <a href="/tarif.html" class="header-a">Тарифы</a>
+                        <a href="/tarif.php" class="header-a">Тарифы</a>
                     </li>
                     <li class="header-li">
-                        <a href="/dostavka.html" class="header-a">Доставка</a>
+                        <a href="/dostavka.php" class="header-a">Доставка</a>
                     </li>
                     <li class="header-li">
-                        <a href="/work.html" class="header-a">Работа у нас</a>
+                        <a href="/work.php" class="header-a">Работа у нас</a>
                     </li>
                 </ul>
             </div>
@@ -128,7 +151,7 @@
       <div class="tarif-item">
           <div class="tarif-item-title">Как мы работаем <span class="tarif-item-shape"></span></div>
           <div class="tarif-item-disc">
-            <p class="tarif-item-disc-title">Вы можете <a href="/index.html">сделать заказ на доставку</a> прямо сейчас, но лучше:</p>
+            <p class="tarif-item-disc-title">Вы можете <a href="/index.php">сделать заказ на доставку</a> прямо сейчас, но лучше:</p>
             <ul>
               <li>- заключить с нами договор;</li>
               <li>- получить скидки и бонусы для корпоративных клиентов;</li>
@@ -183,7 +206,9 @@
       <div class="footer-col">
         <div class="footer-up">
           Для корпоративных клиентов<br>
-          <a href="tel:+375296620272"> + 375 (29) 662 02 72</a>
+          <a href="tel:+375297007979">+375 (29) 700 79 79</a><br>
+          Отдел техподдержки<br>
+          <a href="tel:+375296620272">+375 (29) 662 02 72</a><br>
         </div>
         <div>
           <a href="mailto:service@7890.by">service@7890.by</a> - служба поддержки<br>
@@ -197,9 +222,9 @@
       <div class="footer-col">
         <div class="footer-up">Время работы администрации<br> Пн-Пт с 11 до 18</div>
         <div>
-         <a href="/files/doc1.docx" class="footer-download">Пользовательское соглашение</a><br>
-         <a href="/files/doc2.docx" class="footer-download">Политика конфиденциальности</a><br>
-         <a href="/files/doc3.docx" class="footer-download">Публичный договор</a>
+         <a href="/files/2.pdf" target="_blank" class="footer-download">Пользовательское соглашение</a><br>
+         <a href="/files/1.pdf" target="_blank" class="footer-download">Политика конфиденциальности</a><br>
+         <a href="/files/3.pdf" target="_blank" class="footer-download">Публичный договор</a>
         </div>
       </div>
       <div class="footer-col footer-col-verticalmiddle">
@@ -210,7 +235,7 @@
       </div>
     </div>
     <div class="footer-row footer-row-center">
-      ©2020 
+      ©2020. Разработано&#160;<a href="http://biz-up.by/">BizUp Studio</a> 
     </div>
   </div>
 </section>
