@@ -24,7 +24,7 @@ var jQuery = require('jquery');
             }
         });
 
-        $.ajax('http://localhost:8080/api/order-mail', {
+        $.ajax('http://taxi0780.herokuapp.com/api/order-mail', {
             type: 'POST',
             dataType: 'json',
             data: body
@@ -97,13 +97,6 @@ var jQuery = require('jquery');
     if($('.main-downBlock .main-downBlock-text').length != 0 ) {
         slider('.main-downBlock .main-downBlock-text',2000)
     }
-
-    $('.taxi').submit(function(e) {
-        e.preventDefault();
-
-        var $inputs = document.querySelectorAll('.work-input');
-        console.log($inputs);
-    });
 
     $('.work-form').submit(function(e){
         e.preventDefault();
