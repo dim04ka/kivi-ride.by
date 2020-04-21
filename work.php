@@ -77,7 +77,7 @@
       <div class="work-col work-col-text">
         <h1>Работа у нас</h1>
         <p>Работа с нами — это свобода управлять своим временем и доходом</p>
-        <form action="" class="work-form">
+        <form action="/mail.php" type="POST" class="work-form">
           <div class="field">
             <input type="text" class="work-input" name="name" placeholder="Ваше имя" required>
           </div>
