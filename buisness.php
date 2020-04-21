@@ -42,7 +42,7 @@
     <div class="container">
         <div class="header-row">
             <div class="header-col header-col-logo">
-                <a href="/index.php">
+                <a href="/index.html">
                     <div class="header__logo"></div>
                 </a>
             </div>
@@ -50,19 +50,19 @@
                 <div class="header-btn"><span></span></div>
                 <ul class="header-ul">
                     <li class="header-li">
-                        <a href="/koncept.php" class="header-a">Концепция</a>
+                        <a href="/koncept.html" class="header-a">Концепция</a>
                     </li>
                     <li class="header-li">
-                        <a href="/buisness.php" class="header-a">Для бизнеса</a>
+                        <a href="/buisness.html" class="header-a">Для бизнеса</a>
                     </li>
                     <li class="header-li">
-                        <a href="/tarif.php" class="header-a">Тарифы</a>
+                        <a href="/tarif.html" class="header-a">Тарифы</a>
                     </li>
                     <li class="header-li">
-                        <a href="/dostavka.php" class="header-a">Доставка</a>
+                        <a href="/dostavka.html" class="header-a">Доставка</a>
                     </li>
                     <li class="header-li">
-                        <a href="/work.php" class="header-a">Работа у нас</a>
+                        <a href="/work.html" class="header-a">Работа у нас</a>
                     </li>
                 </ul>
             </div>
@@ -151,7 +151,7 @@
       <div class="tarif-item">
           <div class="tarif-item-title">Как мы работаем <span class="tarif-item-shape"></span></div>
           <div class="tarif-item-disc">
-            <p class="tarif-item-disc-title">Вы можете <a href="/index.php">сделать заказ на доставку</a> прямо сейчас, но лучше:</p>
+            <p class="tarif-item-disc-title">Вы можете <a href="/index.html">сделать заказ на доставку</a> прямо сейчас, но лучше:</p>
             <ul>
               <li>- заключить с нами договор;</li>
               <li>- получить скидки и бонусы для корпоративных клиентов;</li>

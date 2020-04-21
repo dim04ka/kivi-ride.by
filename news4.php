@@ -42,7 +42,7 @@
     <div class="container">
         <div class="header-row">
             <div class="header-col header-col-logo">
-                <a href="/index.php">
+                <a href="/index.html">
                     <div class="header__logo"></div>
                 </a>
             </div>
@@ -50,19 +50,19 @@
                 <div class="header-btn"><span></span></div>
                 <ul class="header-ul">
                     <li class="header-li">
-                        <a href="/koncept.php" class="header-a">Концепция</a>
+                        <a href="/koncept.html" class="header-a">Концепция</a>
                     </li>
                     <li class="header-li">
-                        <a href="/buisness.php" class="header-a">Для бизнеса</a>
+                        <a href="/buisness.html" class="header-a">Для бизнеса</a>
                     </li>
                     <li class="header-li">
-                        <a href="/tarif.php" class="header-a">Тарифы</a>
+                        <a href="/tarif.html" class="header-a">Тарифы</a>
                     </li>
                     <li class="header-li">
-                        <a href="/dostavka.php" class="header-a">Доставка</a>
+                        <a href="/dostavka.html" class="header-a">Доставка</a>
                     </li>
                     <li class="header-li">
-                        <a href="/work.php" class="header-a">Работа у нас</a>
+                        <a href="/work.html" class="header-a">Работа у нас</a>
                     </li>
                 </ul>
             </div>
@@ -82,7 +82,7 @@
     <p>Нужны продукты, книги, одежда или праздничный торт? Наш пеший курьер может доставить для Вас в целости и сохранность все, что пожелаете, за исключением того, что запрещено законом (сигареты, алкоголь, лекарства). </p>
     <p>Новая услуга также позволяет не только экономить время на разъездах по городу, но и свести к минимуму взаимодействие с окружающими. Боитесь подхватить простуду в транспорте? Или Вы просто интроверт, который предпочитает как можно реже бывать на улице? Пеший курьер Kivi ride поможет в любой ситуации.</p>
     <p>Двигайся в стиле Kivi ride!</p>
-    <p>Если Вы рассматриваете курьерскую доставку как способ заработка – заполните форму <a href="/work.php">обратной связи</a></p>
+    <p>Если Вы рассматриваете курьерскую доставку как способ заработка – заполните форму <a href="/work.html">обратной связи</a></p>
   </div>
 </div>
 <section class="footer">

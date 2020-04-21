@@ -24,7 +24,7 @@ var jQuery = require('jquery');
             }
         });
 
-        $.ajax('http://taxi0780.herokuapp.com/api/order-mail', {
+        $.ajax('https://taxi0780.herokuapp.com/api/order-mail', {
             type: 'POST',
             dataType: 'json',
             data: body

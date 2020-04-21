@@ -37,7 +37,7 @@ gulp.task('pcss', (done)=> {
 });
 
 gulp.task('js', ()=> {
-    
+
     var b = browserify({
         entries: './src/js/main.js',
         debug: true
@@ -57,7 +57,7 @@ gulp.task('browser-sync', ()=> {
             baseDir: "./",
             directory: true
         },
-        
+
     });
 });
 
@@ -66,6 +66,9 @@ gulp.task('fileinclude', (done) => {
         .src(['src/*.html'])
         .pipe(fileinclude({
         prefix: '@@',
+        }))
+        .pipe(rename((path) => {
+            path.extname = '.php';
         }))
         .pipe(gulp.dest('./'))
         .on('finish', ()=> {
