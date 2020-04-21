@@ -7,15 +7,38 @@ var jQuery = require('jquery');
 
 (function($){
 
+    $('.form').submit(function(e) {
+        e.preventDefault();
+
+        var body = {};
+
+        $(this).serializeArray().forEach(function(input) {
+            if (body[input.name] != undefined) {
+                if (!(body[input.name] instanceof Array)) {
+                    body[input.name] = [body[input.name]];
+                }
+
+                body[input.name].push(input.value);
+            } else {
+                body[input.name] = input.value;
+            }
+        });
+
+        $.ajax('https://taxi0780.herokuapp.com/api/order-mail', {
+            type: 'POST',
+            dataType: 'json',
+            data: body
+        });
+    });
 
     $(".form-send1").submit(function(e){
         e.preventDefault();
         var $form = $(this);
 
         var car_in = document.getElementById('car_in');
-        console.log(car_in.value)
+        // console.log(car_in.value)
     })
-    
+
     // вкладки на главной
     function formtabs() {
         $('.tablinks').click(function(el){
@@ -30,16 +53,16 @@ var jQuery = require('jquery');
             })
 
             $('.main-dev').each(function(el) {
-                
+
                 if ($(this).hasClass(valTabs)) {
                     $(this).addClass('active');
-                }  
+                }
             })
         });
     }
     formtabs();
 
-    
+
 
     //tarif-item-title slideShow/Hide
     function tarifTabs(){
@@ -74,8 +97,6 @@ var jQuery = require('jquery');
     if($('.main-downBlock .main-downBlock-text').length != 0 ) {
         slider('.main-downBlock .main-downBlock-text',2000)
     }
-    
-
 
     $('.work-form').submit(function(e){
         e.preventDefault();
@@ -86,23 +107,21 @@ var jQuery = require('jquery');
         var name = document.querySelector('.work-input[name=name]').value
         var phone = document.querySelector('.work-input[name=phone]').value
         //var work = document.querySelector('.work-input[name=work]').value
-        var comment = document.querySelector('.work-input[name=comment]').value    
-        var request = {
-            name: name,
-            phone: phone,
-            comment: comment
-        }
+        var comment = document.querySelector('.work-input[name=comment]').value
 
         //console.log(request)
 
         sendAjaxForm('.work-form', 'mail.php');
-      
+
         function sendAjaxForm(ajax_form, url) {
           $.ajax({
               url:     url, //url страницы (send.php)
               type:     "POST", //метод отправки
               dataType: "html",
               data: $(ajax_form).serialize(),  // Сеарилизуем объект
+              beforeSend: function(data) { // событие до отправки
+
+        		        },
               success: function(response) { //Данные отправлены успешно
                 //result = $.parseJSON(response);
                 console.log(response);
@@ -122,7 +141,7 @@ var jQuery = require('jquery');
         setTimeout(function(){
             $modal.style.cssText = " opacity: 0; z-index: -1;"
         },1500)
-     })
+    })
 
 
 
@@ -132,7 +151,7 @@ var jQuery = require('jquery');
     //     e.preventDefault();
 
     //     sendAjaxForm('form', 'send2.php');
-      
+
     //     function sendAjaxForm(ajax_form, url) {
     //       $.ajax({
     //           url:     url, //url страницы (send.php)
@@ -140,7 +159,7 @@ var jQuery = require('jquery');
     //           dataType: "html",
     //           data: $(ajax_form).serialize(),  // Сеарилизуем объект
     //           beforeSend: function(data) { // событие до отправки
- 
+
     //     		        },
     //           success: function(response) { //Данные отправлены успешно
     //             result = $.parseJSON(response);
@@ -154,7 +173,7 @@ var jQuery = require('jquery');
     //                 $('.content__input').css('display','block')
     //                 $('.modal').css('display','none')
     //             },1500)
-            
+
     //         },
     //         error: function(response) { // Данные не отправлены
     //           console.log('Ошибка. Данные не отправлены.');
@@ -164,6 +183,6 @@ var jQuery = require('jquery');
 
 
     // })
- 
+
 
 })(jQuery);

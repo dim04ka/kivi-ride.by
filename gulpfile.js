@@ -37,7 +37,7 @@ gulp.task('pcss', (done)=> {
 });
 
 gulp.task('js', ()=> {
-    
+
     var b = browserify({
         entries: './src/js/main.js',
         debug: true
@@ -57,7 +57,7 @@ gulp.task('browser-sync', ()=> {
             baseDir: "./",
             directory: true
         },
-        
+
     });
 });
 
