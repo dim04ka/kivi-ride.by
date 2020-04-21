@@ -261,7 +261,8 @@
         background-size: contain;
 
         @media(max-width: 480px){
-          display: none;
+          position: relative;
+          right: -40px;
         }
 
       }

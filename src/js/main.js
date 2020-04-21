@@ -85,9 +85,15 @@ var jQuery = require('jquery');
 
         var name = document.querySelector('.work-input[name=name]').value
         var phone = document.querySelector('.work-input[name=phone]').value
-        var work = document.querySelector('.work-input[name=work]').value
+        //var work = document.querySelector('.work-input[name=work]').value
         var comment = document.querySelector('.work-input[name=comment]').value    
+        var request = {
+            name: name,
+            phone: phone,
+            comment: comment
+        }
 
+        //console.log(request)
 
         sendAjaxForm('.work-form', 'mail.php');
       
@@ -97,12 +103,9 @@ var jQuery = require('jquery');
               type:     "POST", //метод отправки
               dataType: "html",
               data: $(ajax_form).serialize(),  // Сеарилизуем объект
-              beforeSend: function(data) { // событие до отправки
- 
-        		        },
               success: function(response) { //Данные отправлены успешно
-                result = $.parseJSON(response);
-                console.log(result);
+                //result = $.parseJSON(response);
+                console.log(response);
             },
             error: function(response) { // Данные не отправлены
               console.log('Ошибка. Данные не отправлены.');
@@ -119,10 +122,9 @@ var jQuery = require('jquery');
         setTimeout(function(){
             $modal.style.cssText = " opacity: 0; z-index: -1;"
         },1500)
-    
+     })
 
 
-    })
 
 
 

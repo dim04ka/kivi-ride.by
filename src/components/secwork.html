@@ -5,7 +5,7 @@
       <div class="work-col work-col-text">
         <h1>Работа у нас</h1>
         <p>Работа с нами — это свобода управлять своим временем и доходом</p>
-        <form action="" class="work-form">
+        <form action="" class="work-form" method="POST">
           <div class="field">
             <input type="text" class="work-input" name="name" placeholder="Ваше имя" required>
           </div>
@@ -13,7 +13,12 @@
             <input type="text" class="work-input" name="phone" placeholder="+375291234567" required>
           </div>
           <div class="field">
-            <input type="text" class="work-input" name="work" placeholder="Вид деятельности">
+            <select name="sort" class="work-input" >
+              <option value="vod-taxi">водитель такси</option>
+              <option value="vod-cour">водитель-курьер</option>
+              <option value="vod-taxi-cour">водитель такси-курьер</option>
+              <option value="cur">пеший курьер</option>
+            </select>
           </div>
           <div class="field">
             <input type="text" class="work-input" name="comment" placeholder="Комментарий">

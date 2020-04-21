@@ -127,8 +127,10 @@
       </div>
       <div class="footer-col footer-col-verticalmiddle">
         <div class="footer-icon">
-          <a href="/" target="_blank" class="footer-icons footer-icons-inst"></a>
-          <a href="/" target="_blank" class="footer-icons footer-icons-vk"></a>
+          <a href="https://www.instagram.com/kivi_ride" target="_blank" class="footer-icons footer-icons-inst"></a>
+          <a href="https://vk.com/public194341574" target="_blank" class="footer-icons footer-icons-vk"></a>
+          <a href="/" target="_blank" class="footer-icons footer-icons-ya"></a>
+          <a href="https://g.page/kivi-ride?gm target=" target="_blank" class="footer-icons footer-icons-g"></a>
         </div>
       </div>
     </div>
@@ -137,8 +139,6 @@
     </div>
   </div>
 </section>
-<!-- <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjPHFAzv1EpXDfAcMG-Bcj0QXl2_VfJ2M&libraries=places&callback=initMap" async defer></script> -->
 <script src="js/app.js"></script>
-
 </body>
 </html> 

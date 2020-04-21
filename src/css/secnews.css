@@ -80,3 +80,20 @@
     }
   }
 }
+
+.NBlock {
+  display: flex;
+  flex-wrap: wrap;
+
+  &-item {
+    width: 50%;
+
+    @media(max-width: 768px){
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

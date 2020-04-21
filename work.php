@@ -77,7 +77,7 @@
       <div class="work-col work-col-text">
         <h1>Работа у нас</h1>
         <p>Работа с нами — это свобода управлять своим временем и доходом</p>
-        <form action="/mail.php" type="POST" class="work-form">
+        <form action="" class="work-form" method="POST">
           <div class="field">
             <input type="text" class="work-input" name="name" placeholder="Ваше имя" required>
           </div>
@@ -85,7 +85,12 @@
             <input type="text" class="work-input" name="phone" placeholder="+375291234567" required>
           </div>
           <div class="field">
-            <input type="text" class="work-input" name="work" placeholder="Вид деятельности">
+            <select name="sort" class="work-input" >
+              <option value="vod-taxi">водитель такси</option>
+              <option value="vod-cour">водитель-курьер</option>
+              <option value="vod-taxi-cour">водитель такси-курьер</option>
+              <option value="cur">пеший курьер</option>
+            </select>
           </div>
           <div class="field">
             <input type="text" class="work-input" name="comment" placeholder="Комментарий">
@@ -136,8 +141,10 @@
       </div>
       <div class="footer-col footer-col-verticalmiddle">
         <div class="footer-icon">
-          <a href="/" target="_blank" class="footer-icons footer-icons-inst"></a>
-          <a href="/" target="_blank" class="footer-icons footer-icons-vk"></a>
+          <a href="https://www.instagram.com/kivi_ride" target="_blank" class="footer-icons footer-icons-inst"></a>
+          <a href="https://vk.com/public194341574" target="_blank" class="footer-icons footer-icons-vk"></a>
+          <a href="/" target="_blank" class="footer-icons footer-icons-ya"></a>
+          <a href="https://g.page/kivi-ride?gm target=" target="_blank" class="footer-icons footer-icons-g"></a>
         </div>
       </div>
     </div>
@@ -146,8 +153,6 @@
     </div>
   </div>
 </section>
-<!-- <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjPHFAzv1EpXDfAcMG-Bcj0QXl2_VfJ2M&libraries=places&callback=initMap" async defer></script> -->
 <script src="js/app.js"></script>
-
 </body>
 </html> 

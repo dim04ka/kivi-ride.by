@@ -388,7 +388,8 @@
 @media(max-width: 480px){
 
       .main .main-downBlock-icon {
-          display: none
+          position: relative;
+          right: -40px
 
       }
         }
@@ -492,17 +493,24 @@
       width: 40px;
       height: 40px;
       display: block;
-      transition: all .3s
+      transition: all .3s;
+      margin-bottom: 10px
     }
 .footer .footer-icon .footer-icons:hover {
         box-shadow: 0 0 10px rgba(255,255,255,0.5);
       }
 .footer .footer-icon .footer-icons-inst {
         background-image: url(../src/img/inst.png);
-        margin-bottom: 10px;
+        
       }
 .footer .footer-icon .footer-icons-vk {
         background-image: url(../src/img/vk.png);
+      }
+.footer .footer-icon .footer-icons-ya {
+        background-image: url(../src/img/yandex.png);
+      }
+.footer .footer-icon .footer-icons-g {
+        background-image: url(../src/img/google.png);
       }
 .koncept {
   padding: 20px 0;
@@ -767,6 +775,22 @@
   }
 .news-img-1 {
       background-image: url(../src/img/buisnes1.png);
+    }
+.NBlock {
+  display: flex;
+  flex-wrap: wrap;
+}
+.NBlock-item {
+    width: 50%
+  }
+@media(max-width: 768px){
+
+  .NBlock-item {
+      width: 100%
+  }
+    }
+.NBlock-item img {
+      width: 100%;
     }
 .dostavka {
   padding: 20px 0;
