@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -42,7 +42,7 @@
     <div class="container">
         <div class="header-row">
             <div class="header-col header-col-logo">
-                <a href="/index.php">
+                <a href="/index.html">
                     <div class="header__logo"></div>
                 </a>
             </div>
@@ -50,19 +50,19 @@
                 <div class="header-btn"><span></span></div>
                 <ul class="header-ul">
                     <li class="header-li">
-                        <a href="/koncept.php" class="header-a">Концепция</a>
+                        <a href="/koncept.html" class="header-a">Концепция</a>
                     </li>
                     <li class="header-li">
-                        <a href="/buisness.php" class="header-a">Для бизнеса</a>
+                        <a href="/buisness.html" class="header-a">Для бизнеса</a>
                     </li>
                     <li class="header-li">
-                        <a href="/tarif.php" class="header-a">Тарифы</a>
+                        <a href="/tarif.html" class="header-a">Тарифы</a>
                     </li>
                     <li class="header-li">
-                        <a href="/dostavka.php" class="header-a">Доставка</a>
+                        <a href="/dostavka.html" class="header-a">Доставка</a>
                     </li>
                     <li class="header-li">
-                        <a href="/work.php" class="header-a">Работа у нас</a>
+                        <a href="/work.html" class="header-a">Работа у нас</a>
                     </li>
                 </ul>
             </div>
@@ -91,31 +91,32 @@
         <div class="main-forms">
           <div class="main-dev devilery active">
             <form action="" class="form form-send1">
+              <input hidden name="type" value="1">
               <div class="form-wrapper">
                 <div class="field">
-                  <input id="car_in" class="field-input searchTextField" type="text" placeholder="Откуда везем ">
-                  <input class="field-input field-input-podezd" type="text" placeholder="Подъезд">
-                  <input class="field-input field-input-kv" type="text" placeholder="Квартира">
+                  <input class="field-input" type="text" name="point" placeholder="Откуда везем " required>
+                  <input class="field-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
+                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Квартира">
                 </div>
                 <div class="field">
-                  <input class="field-input searchTextField" type="text" placeholder="Куда везем">
-                  <input class="field-input field-input-podezd" type="text" placeholder="Подъезд">
-                  <input class="field-input field-input-kv" type="text" placeholder="Квартира">
+                  <input class="field-input" type="text" name="point" placeholder="Куда везем">
+                  <input class="field-input field-input-podezd" type="text" name="pointEntrance" placeholder="Подъезд">
+                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Квартира">
                 </div>
                 <div class="field">
                   <button type="button" class="btn-add">Добавить адрес</button>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="Ваше имя">
+                  <input class="field-input" type="text" name="clientName" placeholder="Ваше имя">
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="+375291234567" required>
+                  <input class="field-input" type="text" name="clientPhone" placeholder="+375291234567" required>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="Время доставки с.. по..">
+                  <input class="field-input" type="text" name="time" placeholder="Время доставки с.. по..">
                 </div>
                 <div class="field">
-                  <textarea class="field-textarea" type="text" placeholder="Напишите, что и когда привезти" rows="2"></textarea>
+                  <textarea class="field-textarea" type="text" name="comment" placeholder="Напишите, что и когда привезти" rows="2"></textarea>
                 </div>
                 <div class="field">
                   <button type="submit" class="btn-send">Отправить заказ</button>
@@ -125,31 +126,32 @@
           </div>
           <div class="main-dev devilerytaxi">
             <form action="" class="form">
+              <input hidden name="type" value="2">
               <div class="form-wrapper">
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="Откуда везем ">
-                  <input class="field-input field-input-podezd" type="text" placeholder="Подъезд">
-                  <input class="field-input field-input-kv" type="text" placeholder="Квартира">
+                  <input class="field-input" type="text" name="point" placeholder="Откуда везем " required>
+                  <input class="field-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
+                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Квартира">
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="Куда везем">
-                  <input class="field-input field-input-podezd" type="text" placeholder="Подъезд">
-                  <input class="field-input field-input-kv" type="text" placeholder="Квартира">
+                  <input class="field-input" type="text" name="point" placeholder="Куда везем">
+                  <input class="field-input field-input-podezd" type="text" name="pointEntrance" placeholder="Подъезд">
+                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Квартира">
                 </div>
                 <div class="field">
                   <button type="button" class="btn-add">Добавить адрес</button>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="Ваше имя">
+                  <input class="field-input" type="text" name="clientName" placeholder="Ваше имя">
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="+375291234567">
+                  <input class="field-input" type="text" name="clientPhone" placeholder="+375291234567" required>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="Время доставки с.. по..">
+                  <input class="field-input" type="text" name="time" placeholder="Время доставки с.. по..">
                 </div>
                 <div class="field">
-                  <textarea class="field-textarea" type="text" placeholder="Напишите, что и когда привезти" rows="2"></textarea>
+                  <textarea class="field-textarea" type="text" name="comment" placeholder="Напишите, что и когда привезти" rows="2"></textarea>
                 </div>
                 <div class="field">
                   <button type="submit" class="btn-send">Отправить заказ</button>
@@ -159,26 +161,27 @@
           </div>
           <div class="main-dev taxi">
             <form action="" class="form">
+              <input hidden name="type" value="3">
               <div class="form-wrapper">
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="Откуда везем ">
-                  <input class="field-input field-input-podezd" type="text" placeholder="Подъезд">
+                  <input class="field-input taxi-input" name="point" type="text" placeholder="Откуда везем " required>
+                  <input class="field-input taxi-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="Куда везем">
-                  <input class="field-input field-input-podezd" type="text" placeholder="Подъезд">
+                  <input class="field-input taxi-input" type="text" name="point" placeholder="Куда везем">
+                  <input class="field-input taxi-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
                 </div>
                 <div class="field">
                   <button type="button" class="btn-add">Добавить адрес</button>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="Ваше имя">
+                  <input class="field-input taxi-input" type="text" name="clientName" placeholder="Ваше имя">
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" placeholder="+375291234567">
+                  <input class="field-input taxi-input" type="text" name="clientPhone" placeholder="+375291234567" required>
                 </div>
                 <div class="field">
-                  <textarea class="field-textarea" type="text" placeholder="Комментарий к заказу" rows="2"></textarea>
+                  <textarea class="field-textarea taxi-input" type="text" name="comment" placeholder="Комментарий к заказу" rows="2"></textarea>
                 </div>
                 <div class="field">
                   <button type="submit" class="btn-send">Такси от 3,3 рублей</button>
@@ -189,10 +192,10 @@
         </div>
         <div class="main-downBlock">
           <a href="/" target="_blank" class="main-downBlock-text active">Запуск сервиса<br> доставки в Минске</a>
-          <a href="/buisness.php" target="_blank" class="main-downBlock-text">Выгодное предложение<br> для бизнеса</a>
-          <a href="/dostavka.php" target="_blank" class="main-downBlock-text">Доставка курьером<br> и на авто</a>
-          <a href="/tarif.php" target="_blank" class="main-downBlock-text">Вызвать такси в Минске<br> по доступным ценам </a>
-          <a href="/work.php" target="_blank" class="main-downBlock-text"> Работа курьером<br> в Минске </a>
+          <a href="/buisness.html" target="_blank" class="main-downBlock-text">Выгодное предложение<br> для бизнеса</a>
+          <a href="/dostavka.html" target="_blank" class="main-downBlock-text">Доставка курьером<br> и на авто</a>
+          <a href="/tarif.html" target="_blank" class="main-downBlock-text">Вызвать такси в Минске<br> по доступным ценам </a>
+          <a href="/work.html" target="_blank" class="main-downBlock-text"> Работа курьером<br> в Минске </a>
           <div class="main-downBlock-icon"></div>
         </div>
       </div>
@@ -211,10 +214,11 @@
     };
 
     $(inputs).each(function (i, element) {
+
     var autocomplete = new google.maps.places.Autocomplete(element, options);
-    
+
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
-        var place = autocomplete.getPlace(); 
+        var place = autocomplete.getPlace();
         console.log(place.geometry.location.lat());
         console.log(place.geometry.location.lng());
         });
@@ -268,3 +272,4 @@
 </body>
 </html> 
   
+ 
