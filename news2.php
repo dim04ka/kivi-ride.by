@@ -12,6 +12,27 @@
   <link href="https://fonts.googleapis.com/css?family=Average+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script>
+    fbq('track', 'CompleteRegistration');
+  </script>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '573730836773949');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=573730836773949&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Facebook Pixel Code -->
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -38,6 +59,33 @@
  </script>
 </head>
 <body>
+    <!-- Rating Mail.ru counter -->
+<script type="text/javascript">
+    var _tmr = window._tmr || (window._tmr = []);
+    _tmr.push({id: "3172305", type: "pageView", start: (new Date()).getTime(), pid: "USER_ID"});
+    (function (d, w, id) {
+      if (d.getElementById(id)) return;
+      var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+      ts.src = "https://top-fwz1.mail.ru/js/code.js";
+      var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+      if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+    })(document, window, "topmailru-code");
+    </script><noscript><div>
+    <img src="https://top-fwz1.mail.ru/counter?id=3172305;js=na" style="border:0;position:absolute;left:-9999px;" alt="Top.Mail.Ru" />
+    </div></noscript>
+    <!-- //Rating Mail.ru counter -->
+    <!-- Rating@Mail.ru counter dynamic remarketing appendix -->
+    <script type="text/javascript">
+    var _tmr = _tmr || [];
+    _tmr.push({
+        type: 'itemView',
+        productid: 'VALUE',
+        pagetype: 'VALUE',
+        list: 'VALUE',
+        totalvalue: 'VALUE'
+    });
+    </script>
+    <!-- // Rating@Mail.ru counter dynamic remarketing appendix -->
   <section class="header">
     <div class="container">
         <div class="header-row">
@@ -126,7 +174,7 @@
         <div class="footer-icon">
           <a href="https://www.instagram.com/kivi_ride" target="_blank" class="footer-icons footer-icons-inst"></a>
           <a href="https://vk.com/public194341574" target="_blank" class="footer-icons footer-icons-vk"></a>
-          <a href="/" target="_blank" class="footer-icons footer-icons-ya"></a>
+          <a href="https://yandex.ru/profile/64520498871?lr=157" target="_blank" class="footer-icons footer-icons-ya"></a>
           <a href="https://g.page/kivi-ride?gm target=" target="_blank" class="footer-icons footer-icons-g"></a>
         </div>
       </div>
