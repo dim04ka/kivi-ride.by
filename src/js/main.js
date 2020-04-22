@@ -10,9 +10,10 @@ var jQuery = require('jquery');
     $('.form').submit(function(e) {
         e.preventDefault();
 
+        var $form = $(this);
         var body = {};
 
-        $(this).serializeArray().forEach(function(input) {
+        $form.serializeArray().forEach(function(input) {
             if (body[input.name] != undefined) {
                 if (!(body[input.name] instanceof Array)) {
                     body[input.name] = [body[input.name]];
@@ -26,8 +27,10 @@ var jQuery = require('jquery');
 
         $.ajax('https://taxi0780.herokuapp.com/api/order-mail', {
             type: 'POST',
-            dataType: 'json',
-            data: body
+            data: body,
+            success: function() {
+                $form[0].reset();
+            }
         });
     });
 
