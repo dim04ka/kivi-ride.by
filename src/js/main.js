@@ -18,7 +18,7 @@ var jQuery = require('jquery');
                 var div = document.createElement('div');
                 div.className = "field";
                 div.setAttribute('index',c);
-                div.innerHTML = "<input class='field-input' type='text' name='point' placeholder='Куда везем' required><input class='field-input field-input-podezd' name='pointEntrance' type='text' placeholder='Подъезд'> <input class='field-input field-input-kv' type='text' name='pointRoom' placeholder='Квартира'><button class='del-btn' type='button'>&times;</button>";
+                div.innerHTML = "<input class='field-input' type='text' name='point' placeholder='Куда везем' required><input class='field-input field-input-podezd' name='pointEntrance' type='text' placeholder='Подъезд'> <input class='field-input field-input-kv' type='text' name='pointRoom' placeholder='Кв'><button class='del-btn' type='button'>&times;</button>";
                 
                 var delBtn = div.querySelector('.del-btn');  
                 div.querySelector('.del-btn').addEventListener("click", function() {  

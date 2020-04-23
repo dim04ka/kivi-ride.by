@@ -153,8 +153,8 @@
           <a href="tel:+375296620272">+375 (29) 662 02 72</a><br>
         </div>
         <div>
-          <a href="mailto:service@7890.by">service@7890.by</a> - служба поддержки<br>
-          <a href="mailto:info@7890.by">info@7890.by</a> - служба поддержки
+          <a href="mailto:service@kivi-ride.by">service@kivi-ride.by</a> - служба поддержки<br>
+          <a href="mailto:info@kivi-ride.by">info@kivi-ride.by</a> - служба поддержки
         </div>
       </div>
       <div class="footer-col">

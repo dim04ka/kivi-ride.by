@@ -153,12 +153,12 @@
                 <div class="field">
                   <input class="field-input" type="text" name="point" placeholder="Откуда везем " required>
                   <input class="field-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
-                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Квартира">
+                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Кв">
                 </div>
                 <div class="field">
                   <input class="field-input" type="text" name="point" placeholder="Куда везем">
                   <input class="field-input field-input-podezd" type="text" name="pointEntrance" placeholder="Подъезд">
-                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Квартира">
+                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Кв">
                 </div>
                 <div class="newfield"></div>
                 <div class="field">
@@ -189,12 +189,12 @@
                 <div class="field">
                   <input class="field-input" type="text" name="point" placeholder="Откуда везем " required>
                   <input class="field-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
-                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Квартира">
+                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Кв">
                 </div>
                 <div class="field">
                   <input class="field-input" type="text" name="point" placeholder="Куда везем">
                   <input class="field-input field-input-podezd" type="text" name="pointEntrance" placeholder="Подъезд">
-                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Квартира">
+                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Кв">
                 </div>
                 <div class="newfield"></div>
                 <div class="field">
@@ -244,7 +244,7 @@
                   <textarea class="field-textarea taxi-input" type="text" name="comment" placeholder="Комментарий к заказу" rows="2" required></textarea>
                 </div>
                 <div class="field">
-                  <button type="submit" class="btn-send">Такси от 3,3 рублей</button>
+                  <button type="submit" class="btn-send">Вызвать такси</button>
                 </div>
               </div>
             </form>
@@ -298,8 +298,8 @@
           <a href="tel:+375296620272">+375 (29) 662 02 72</a><br>
         </div>
         <div>
-          <a href="mailto:service@7890.by">service@7890.by</a> - служба поддержки<br>
-          <a href="mailto:info@7890.by">info@7890.by</a> - служба поддержки
+          <a href="mailto:service@kivi-ride.by">service@kivi-ride.by</a> - служба поддержки<br>
+          <a href="mailto:info@kivi-ride.by">info@kivi-ride.by</a> - служба поддержки
         </div>
       </div>
       <div class="footer-col">
