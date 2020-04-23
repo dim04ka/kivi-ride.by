@@ -2,6 +2,43 @@ window.jQuery = require('jquery');
 var $ = require('jquery');
 var jQuery = require('jquery');
 
+function decimalAdjust(type, value, exp) {
+    // Если степень не определена, либо равна нулю...
+    if (typeof exp === 'undefined' || +exp === 0) {
+        return Math[type](value);
+    }
+    value = +value;
+    exp = +exp;
+    // Если значение не является числом, либо степень не является целым числом...
+    if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+        return NaN;
+    }
+    // Сдвиг разрядов
+    value = value.toString().split('e');
+    value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+    // Обратный сдвиг
+    value = value.toString().split('e');
+    return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+}
+
+// Десятичное округление к ближайшему
+if (!Math.round10) {
+    Math.round10 = function(value, exp) {
+        return decimalAdjust('round', value, exp);
+    };
+}
+// Десятичное округление вниз
+if (!Math.floor10) {
+    Math.floor10 = function(value, exp) {
+        return decimalAdjust('floor', value, exp);
+    };
+}
+// Десятичное округление вверх
+if (!Math.ceil10) {
+    Math.ceil10 = function(value, exp) {
+        return decimalAdjust('ceil', value, exp);
+    };
+}
 
 (function($){
         $('#pickup-point').focus(function(e) {
@@ -10,28 +47,52 @@ var jQuery = require('jquery');
             var $input = $(this);
             navigator.geolocation.getCurrentPosition(function(position) {
                 var geolocation = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
+                    lat: Math.round10(position.coords.latitude, -7),
+                    lng: Math.round10(position.coords.longitude, -7)
                 };
 
-                var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='
-                    + position.coords.latitude
+                var url = 'https://maps.googleapis.com/maps/api/geocode/json?language=ru&latlng='
+                    + geolocation.lat
                     + ','
-                    + position.coords.longitude
+                    + geolocation.lng
                     + '&key=AIzaSyBD-3DkLG3OTtUH9jraldIvZNi1D2oL0Es';
 
                 $.ajax(url, {
                     method: 'GET',
                     success: function(res) {
-                        if (res && res.results && res.results[0]) {
+                        if (res && res.results && res.results.length) {
+                            var pos = {};
+
+                            for (var i = 0; i < res.results.length; i++) {
+                                var address = res.results[i].formatted_address.split(',')[0];
+                                var splitedAddress = address.split(' ');
+
+                                var building = splitedAddress.splice(splitedAddress.length - 1)[0]                                      ;
+                                var street = splitedAddress.join(' ');
+
+                                console.log(street, building);
+                                console.log('!!!!!', street.match(/[^a-zA-Z]+/));
+                                if (!pos.street && street && street.match(/[^a-zA-Z]+/)) {
+                                    pos.street = street;
+                                }
+
+                                console.log('!!!!!', building.match(/\d+/));
+                                if (!pos.building && building && building.match(/\d+/)) {
+                                    pos.building = building;
+                                }
+
+                                if (pos.street && pos.building) {
+                                    $($input[0]).val(address);
+                                    break;
+                                }
+                            }
                             console.log($input[0]);
-                            $($input[0]).val(res.results[0].formatted_address.split(',')[0]);
                         }
                         console.log(res.results[0].formatted_address.split(',')[0]);
                     }
                 });
 
-                console.log(position);
+                console.log(geolocation);
             });
         });
 
