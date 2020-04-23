@@ -4,26 +4,57 @@ var jQuery = require('jquery');
 
 
 (function($){
+        $('#pickup-point').focus(function(e) {
+            e.preventDefault();
+
+            var $input = $(this);
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var geolocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+                var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='
+                    + position.coords.latitude
+                    + ','
+                    + position.coords.longitude
+                    + '&key=AIzaSyBD-3DkLG3OTtUH9jraldIvZNi1D2oL0Es';
+
+                $.ajax(url, {
+                    method: 'GET',
+                    success: function(res) {
+                        if (res && res.results && res.results[0]) {
+                            console.log($input[0]);
+                            $($input[0]).val(res.results[0].formatted_address.split(',')[0]);
+                        }
+                        console.log(res.results[0].formatted_address.split(',')[0]);
+                    }
+                });
+
+                console.log(position);
+            });
+        });
+
      $(function(){
         function counter(){
             var c = 0;
 
             return function(){
                 if (c>5) {
-                    return 
+                    return
                 }
 
-                $form = $(this).closest('form'); 
+                $form = $(this).closest('form');
                 $wrapper = $form.find('.newfield');
                 var div = document.createElement('div');
                 div.className = "field";
                 div.setAttribute('index',c);
                 div.innerHTML = "<input class='field-input' type='text' name='point' placeholder='Куда везем' required><input class='field-input field-input-podezd' name='pointEntrance' type='text' placeholder='Подъезд'> <input class='field-input field-input-kv' type='text' name='pointRoom' placeholder='Кв'><button class='del-btn' type='button'>&times;</button>";
-                
-                var delBtn = div.querySelector('.del-btn');  
-                div.querySelector('.del-btn').addEventListener("click", function() {  
-                    delBtn.parentElement.remove(); 
-                    c--;                                                                                        
+
+                var delBtn = div.querySelector('.del-btn');
+                div.querySelector('.del-btn').addEventListener("click", function() {
+                    delBtn.parentElement.remove();
+                    c--;
                 });
 
                 $wrapper.append(div);
@@ -39,14 +70,13 @@ var jQuery = require('jquery');
             counter1.call(this)
         })
         $('.form-send2 .btn-add').click(function(){
-            
+
             counter2.call(this)
         })
         $('.form-send3 .btn-add').click(function(){
             counter3.call(this)
         })
     })
-
 
 
 
