@@ -94,7 +94,7 @@
               <input hidden name="type" value="1">
               <div class="form-wrapper">
                 <div class="field">
-                  <input class="field-input" type="text" name="point" placeholder="Откуда везем " required>
+                  <input class="field-input" id="pickup-point" type="text" name="point" placeholder="Откуда везем " required>
                   <input class="field-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
                   <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Квартира">
                 </div>
@@ -207,8 +207,7 @@
 <script>
 
   function initMap() {
-
-    var inputs = $('.searchTextField');
+      var inputs = $('.searchTextField');
     var options = {
         componentRestrictions: {country: 'by'}
     };

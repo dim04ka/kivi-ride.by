@@ -6,6 +6,36 @@ var jQuery = require('jquery');
 
 
 (function($){
+        $('#pickup-point').focus(function(e) {
+            e.preventDefault();
+
+            var $input = $(this);
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var geolocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+                var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='
+                    + position.coords.latitude
+                    + ','
+                    + position.coords.longitude
+                    + '&key=AIzaSyBD-3DkLG3OTtUH9jraldIvZNi1D2oL0Es';
+
+                $.ajax(url, {
+                    method: 'GET',
+                    success: function(res) {
+                        if (res && res.results && res.results[0]) {
+                            console.log($input[0]);
+                            $($input[0]).val(res.results[0].formatted_address.split(',')[0]);
+                        }
+                        console.log(res.results[0].formatted_address.split(',')[0]);
+                    }
+                });
+
+                console.log(position);
+            });
+        });
 
     $('.form').submit(function(e) {
         e.preventDefault();
