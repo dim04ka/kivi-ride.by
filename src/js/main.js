@@ -2,8 +2,6 @@ window.jQuery = require('jquery');
 var $ = require('jquery');
 var jQuery = require('jquery');
 
- //auto complite adress
-
 
 (function($){
         $('#pickup-point').focus(function(e) {
@@ -37,6 +35,51 @@ var jQuery = require('jquery');
             });
         });
 
+     $(function(){
+        function counter(){
+            var c = 0;
+
+            return function(){
+                if (c>5) {
+                    return
+                }
+
+                $form = $(this).closest('form');
+                $wrapper = $form.find('.newfield');
+                var div = document.createElement('div');
+                div.className = "field";
+                div.setAttribute('index',c);
+                div.innerHTML = "<input class='field-input' type='text' name='point' placeholder='Куда везем' required><input class='field-input field-input-podezd' name='pointEntrance' type='text' placeholder='Подъезд'> <input class='field-input field-input-kv' type='text' name='pointRoom' placeholder='Кв'><button class='del-btn' type='button'>&times;</button>";
+
+                var delBtn = div.querySelector('.del-btn');
+                div.querySelector('.del-btn').addEventListener("click", function() {
+                    delBtn.parentElement.remove();
+                    c--;
+                });
+
+                $wrapper.append(div);
+                return c++;
+            }
+        }
+
+        var counter1 = counter();
+        var counter2 = counter();
+        var counter3 = counter();
+
+        $('.form-send1 .btn-add').click(function(){
+            counter1.call(this)
+        })
+        $('.form-send2 .btn-add').click(function(){
+
+            counter2.call(this)
+        })
+        $('.form-send3 .btn-add').click(function(){
+            counter3.call(this)
+        })
+    })
+
+
+
     $('.form').submit(function(e) {
         e.preventDefault();
 
@@ -62,6 +105,25 @@ var jQuery = require('jquery');
                 $form[0].reset();
             }
         });
+
+        $('.form input[type="text"]').each(function(inx,el){
+            $(el).val('');
+        })
+        $('.form .field-textarea').each(function(inx,el){
+            $(el).val('');
+        })
+        var $modal = document.querySelector('.modal');
+        $modal.style.cssText = " opacity: 1; z-index: 5;"
+        setTimeout(function(){
+            $modal.style.cssText = " opacity: 0; z-index: -1;"
+        },1500)
+
+
+        $('.newfield').each(function(inx,el){
+            while (el.firstChild) {
+                el.removeChild(el.firstChild);
+            }
+        })
     });
 
     $(".form-send1").submit(function(e){
@@ -169,7 +231,7 @@ var jQuery = require('jquery');
             el.value = ''
         })
 
-        $modal.style.cssText = " opacity: 1; z-index: 1;"
+        $modal.style.cssText = " opacity: 1; z-index: 5;"
 
         setTimeout(function(){
             $modal.style.cssText = " opacity: 0; z-index: -1;"
