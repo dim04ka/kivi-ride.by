@@ -41,7 +41,7 @@ if (!Math.ceil10) {
 }
 
 (function($){
-        $('#pickup-point').focus(function(e) {
+        $('.pickup-point').focus(function(e) {
             e.preventDefault();
 
             var $input = $(this);
