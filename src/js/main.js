@@ -2,44 +2,6 @@ window.jQuery = require('jquery');
 var $ = require('jquery');
 var jQuery = require('jquery');
 
-function decimalAdjust(type, value, exp) {
-    // Если степень не определена, либо равна нулю...
-    if (typeof exp === 'undefined' || +exp === 0) {
-        return Math[type](value);
-    }
-    value = +value;
-    exp = +exp;
-    // Если значение не является числом, либо степень не является целым числом...
-    if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
-        return NaN;
-    }
-    // Сдвиг разрядов
-    value = value.toString().split('e');
-    value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
-    // Обратный сдвиг
-    value = value.toString().split('e');
-    return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
-}
-
-// Десятичное округление к ближайшему
-if (!Math.round10) {
-    Math.round10 = function(value, exp) {
-        return decimalAdjust('round', value, exp);
-    };
-}
-// Десятичное округление вниз
-if (!Math.floor10) {
-    Math.floor10 = function(value, exp) {
-        return decimalAdjust('floor', value, exp);
-    };
-}
-// Десятичное округление вверх
-if (!Math.ceil10) {
-    Math.ceil10 = function(value, exp) {
-        return decimalAdjust('ceil', value, exp);
-    };
-}
-
 (function($){
         $('.pickup-point').focus(function(e) {
             e.preventDefault();
@@ -64,6 +26,7 @@ if (!Math.ceil10) {
                         var sXML = oSerializer.serializeToString(res);
                         var domparser = new DOMParser();
                         var doc = domparser.parseFromString(sXML, "application/xml");
+
                         var building = doc.getElementsByTagName('addressparts')[0].getElementsByTagName('house_number')[0].innerHTML;
                         var street = doc.getElementsByTagName('addressparts')[0].getElementsByTagName('road')[0].innerHTML;
                         $($input[0]).val(street + ' ' + building);
@@ -72,7 +35,8 @@ if (!Math.ceil10) {
                 }, function(positionError) {
                 console.log(positionError);
             }, {
-                enableHighAccuracy: true
+                enableHighAccuracy: true,
+                maximumAge: 0
             });
         });
 
@@ -88,9 +52,9 @@ if (!Math.ceil10) {
                 $form = $(this).closest('form');
                 $wrapper = $form.find('.newfield');
                 var div = document.createElement('div');
-                div.className = "field";
+                div.className = "field field-extra";
                 div.setAttribute('index',c);
-                div.innerHTML = "<input class='field-input' type='text' name='point' placeholder='Куда везем' required><input class='field-input field-input-podezd' name='pointEntrance' type='text' placeholder='Подъезд'> <input class='field-input field-input-kv' type='text' name='pointRoom' placeholder='Кв'><button class='del-btn' type='button'>&times;</button>";
+                div.innerHTML = "<input class='field-input' type='text' name='point' placeholder='Доставить улица/дом/корпус' required><input class='field-input field-input-podezd' name='pointEntrance' type='text' placeholder='Подъезд/этаж'> <input class='field-input field-input-kv' type='text' name='pointRoom' placeholder='Кв/офис'><button class='del-btn' type='button'>&times;</button>";
 
                 var delBtn = div.querySelector('.del-btn');
                 div.querySelector('.del-btn').addEventListener("click", function() {
