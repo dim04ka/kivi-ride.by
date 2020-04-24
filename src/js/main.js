@@ -41,7 +41,7 @@ if (!Math.ceil10) {
 }
 
 (function($){
-        $('#pickup-point').focus(function(e) {
+        $('.pickup-point').focus(function(e) {
             e.preventDefault();
 
             var $input = $(this);
@@ -169,21 +169,16 @@ if (!Math.ceil10) {
             data: body,
             success: function() {
                 $form[0].reset();
+
+                var $modal = document.querySelector('.modal');
+
+                $modal.style.cssText = " opacity: 1; z-index: 5;"
+
+                setTimeout(function() {
+                    $modal.style.cssText = " opacity: 0; z-index: -1;"
+                }, 1500)
             }
         });
-
-        $('.form input[type="text"]').each(function(inx,el){
-            $(el).val('');
-        })
-        $('.form .field-textarea').each(function(inx,el){
-            $(el).val('');
-        })
-        var $modal = document.querySelector('.modal');
-        $modal.style.cssText = " opacity: 1; z-index: 5;"
-        setTimeout(function(){
-            $modal.style.cssText = " opacity: 0; z-index: -1;"
-        },1500)
-
 
         $('.newfield').each(function(inx,el){
             while (el.firstChild) {
@@ -262,47 +257,30 @@ if (!Math.ceil10) {
     $('.work-form').submit(function(e){
         e.preventDefault();
 
-        var $inputs = document.querySelectorAll('.work-input');
-        var $modal = document.querySelector('.modal');
+        var body = {};
+        var $form = $(this);
 
-        var name = document.querySelector('.work-input[name=name]').value
-        var phone = document.querySelector('.work-input[name=phone]').value
-        //var work = document.querySelector('.work-input[name=work]').value
-        var comment = document.querySelector('.work-input[name=comment]').value
+        $form.serializeArray().forEach(function(input) {
+            body[input.name] = input.value;
+        });
 
-        //console.log(request)
 
-        sendAjaxForm('.work-form', 'mail.php');
+        $.ajax('https://taxi0780.herokuapp.com/api/work-mail', {
+            type:     "POST",
+            data: body,
+            success: function() {
+                $form[0].reset();
 
-        function sendAjaxForm(ajax_form, url) {
-          $.ajax({
-              url:     url, //url страницы (send.php)
-              type:     "POST", //метод отправки
-              dataType: "html",
-              data: $(ajax_form).serialize(),  // Сеарилизуем объект
-              beforeSend: function(data) { // событие до отправки
+                var $modal = document.querySelector('.modal');
 
-        		        },
-              success: function(response) { //Данные отправлены успешно
-                //result = $.parseJSON(response);
-                console.log(response);
-            },
-            error: function(response) { // Данные не отправлены
-              console.log('Ошибка. Данные не отправлены.');
+                $modal.style.cssText = " opacity: 1; z-index: 5;"
+
+                setTimeout(function() {
+                    $modal.style.cssText = " opacity: 0; z-index: -1;"
+                }, 1500)
             }
-         });
-        }
-
-        $inputs.forEach(function(el){
-            el.value = ''
-        })
-
-        $modal.style.cssText = " opacity: 1; z-index: 5;"
-
-        setTimeout(function(){
-            $modal.style.cssText = " opacity: 0; z-index: -1;"
-        },1500)
-    })
+        });
+    });
 
 
 

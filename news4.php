@@ -38,7 +38,7 @@
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(55726756, "init", {
          clickmap:true,
          trackLinks:true,
@@ -54,7 +54,7 @@
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
- 
+
    gtag('config', 'UA-149865887-1');
  </script>
 </head>
@@ -117,7 +117,7 @@
         </div>
     </div>
 </section>
- 
+
 <div class="news">
   <div class="container">
     <h1>Новости</h1>
@@ -154,7 +154,7 @@
         </div>
         <div>
           <a href="mailto:service@kivi-ride.by">service@kivi-ride.by</a> - служба поддержки<br>
-          <a href="mailto:info@kivi-ride.by">info@kivi-ride.by</a> - служба поддержки
+          <a href="mailto:info@kivi-ride.by">info@kivi-ride.by</a> - для общих вопросов
         </div>
       </div>
       <div class="footer-col">
@@ -179,10 +179,10 @@
       </div>
     </div>
     <div class="footer-row footer-row-center">
-      ©2020. Разработано&#160;<a href="http://biz-up.by/">BizUp Studio</a> 
+      ©2020. Разработано&#160;<a href="http://biz-up.by/">BizUp Studio</a>
     </div>
   </div>
 </section>
 <script src="js/app.js"></script>
 </body>
-</html> 
+</html>
