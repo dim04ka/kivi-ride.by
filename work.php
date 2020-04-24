@@ -133,11 +133,11 @@
             <input type="text" class="work-input" name="phone" placeholder="+375291234567" required>
           </div>
           <div class="field">
-            <select name="sort" class="work-input" >
-              <option value="vod-taxi">водитель такси</option>
-              <option value="vod-cour">водитель-курьер</option>
-              <option value="vod-taxi-cour">водитель такси-курьер</option>
-              <option value="cur">пеший курьер</option>
+            <select name="sort" class="work-input">
+              <option value="vod-taxi">Водитель такси</option>
+              <option value="vod-cour">Водитель-курьер</option>
+              <option value="vod-taxi-cour">Водитель такси-курьер</option>
+              <option value="cur">Пеший курьер</option>
             </select>
           </div>
           <div class="field">
@@ -160,6 +160,7 @@
     </div>
 </div>
 </div>
+
 <section class="footer">
   <div class="container">
     <div class="footer-row footer-row-sb">
@@ -172,7 +173,7 @@
         </div>
         <div>
           <a href="mailto:service@kivi-ride.by">service@kivi-ride.by</a> - служба поддержки<br>
-          <a href="mailto:info@kivi-ride.by">info@kivi-ride.by</a> - служба поддержки
+          <a href="mailto:info@kivi-ride.by">info@kivi-ride.by</a> - для общих вопросов
         </div>
       </div>
       <div class="footer-col">

@@ -38,7 +38,7 @@
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
- 
+
     ym(55726756, "init", {
          clickmap:true,
          trackLinks:true,
@@ -54,7 +54,7 @@
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
- 
+
    gtag('config', 'UA-149865887-1');
  </script>
 </head>
@@ -117,7 +117,7 @@
         </div>
     </div>
 </section>
- 
+
   <section class="main">
   <div class="modal">
       <div class="modal-text">
@@ -151,14 +151,14 @@
               <input hidden name="type" value="1">
               <div class="form-wrapper">
                 <div class="field">
-                  <input class="field-input" id="pickup-point" type="text" name="point" placeholder="Забрать улица/ дом/ корпус " required>
-                  <input class="field-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд/ этаж">
-                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Кв/ офис">
+                  <input class="field-input pickup-point" type="text" name="point" placeholder="Забрать улица/дом/корпус " required>
+                  <input class="field-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд/этаж">
+                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Кв/офис">
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" name="point" placeholder="Доставить улица/ дом/ корпус">
-                  <input class="field-input field-input-podezd" type="text" name="pointEntrance" placeholder="Подъезд/ этаж">
-                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Кв/ офис">
+                  <input class="field-input" type="text" name="point" placeholder="Доставить улица/дом/корпус">
+                  <input class="field-input field-input-podezd" type="text" name="pointEntrance" placeholder="Подъезд/этаж">
+                  <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Кв/офис">
                 </div>
                 <div class="newfield"></div>
                 <div class="field">
@@ -187,7 +187,7 @@
               <input hidden name="type" value="2">
               <div class="form-wrapper">
                 <div class="field">
-                  <input class="field-input" id="pickup-point" type="text" name="point" placeholder="Забрать улица/ дом/ корпус " required>
+                  <input class="field-input pickup-point" type="text" name="point" placeholder="Забрать улица/ дом/ корпус " required>
                   <input class="field-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд/ этаж">
                   <input class="field-input field-input-kv" type="text" name="pointRoom" placeholder="Кв/ офис">
                 </div>
@@ -223,7 +223,7 @@
               <input hidden name="type" value="3">
               <div class="form-wrapper">
                 <div class="field">
-                  <input class="field-input taxi-input" id="pickup-point" name="point" type="text" placeholder="Откуда везем " required>
+                  <input class="field-input taxi-input pickup-point" name="point" type="text" placeholder="Откуда везем " required>
                   <input class="field-input taxi-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
                 </div>
                 <div class="field">
@@ -298,7 +298,7 @@
         </div>
         <div>
           <a href="mailto:service@kivi-ride.by">service@kivi-ride.by</a> - служба поддержки<br>
-          <a href="mailto:info@kivi-ride.by">info@kivi-ride.by</a> - служба поддержки
+          <a href="mailto:info@kivi-ride.by">info@kivi-ride.by</a> - для общих вопросов
         </div>
       </div>
       <div class="footer-col">
@@ -323,12 +323,13 @@
       </div>
     </div>
     <div class="footer-row footer-row-center">
-      ©2020. Разработано&#160;<a href="http://biz-up.by/">BizUp Studio</a> 
+      ©2020. Разработано&#160;<a href="http://biz-up.by/">BizUp Studio</a>
     </div>
   </div>
 </section>
 <script src="js/app.js"></script>
 </body>
-</html> 
+</html>
+
   
  
