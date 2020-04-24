@@ -63,6 +63,7 @@ if (!Math.ceil10) {
                         if (res && res.results && res.results.length) {
                             var pos = {};
 
+/*
                             for (var i = 0; i < res.results.length; i++) {
                                 if (res.results[i].types.includes('street_address') || res.results[i].types.includes('route')) {
                                     var address = res.results[i].formatted_address.split(',')[0];
@@ -83,12 +84,14 @@ if (!Math.ceil10) {
                                     }
 
                                     if (pos.street && pos.building) {
-                                        $($input[0]).val(pos.street + ' ' + pos.building);
                                         break;
                                     }
                                 }
                             }
-                            console.log($input[0]);
+*/
+                            $($input[0]).val(res.results[i].formatted_address.split(',')[0]);
+
+                            // console.log($input[0]);
                         }
                         console.log(res.results[0].formatted_address.split(',')[0]);
                     }
