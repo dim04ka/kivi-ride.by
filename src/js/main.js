@@ -64,26 +64,28 @@ if (!Math.ceil10) {
                             var pos = {};
 
                             for (var i = 0; i < res.results.length; i++) {
-                                var address = res.results[i].formatted_address.split(',')[0];
-                                var splitedAddress = address.split(' ');
+                                // if (res.results[i].types.includes('street_address') || res.results[i].types.includes('route')) {
+                                    var address = res.results[i].formatted_address.split(',')[0];
+                                    var splitedAddress = address.split(' ');
 
-                                var building = splitedAddress.splice(splitedAddress.length - 1)[0]                                      ;
-                                var street = splitedAddress.join(' ');
+                                    var building = splitedAddress.length > 2 ? splitedAddress.splice(splitedAddress.length - 1)[0] : splitedAddress[1].match(/\d+/) ? splitedAddress[1] : '';                                     ;
+                                    var street = splitedAddress.length > 2 || !splitedAddress[1].match(/\d+/) ? splitedAddress.join(' ') : splitedAddress[0];
 
-                                console.log(street, building);
-                                console.log('!!!!!', street.match(/[^a-zA-Z]+/));
-                                if (!pos.street && street && street.match(/[^a-zA-Z]+/)) {
-                                    pos.street = street;
-                                }
+                                    console.log(street, building);
+                                    console.log('!!!!!', street.match(/[^a-zA-Z]+/));
+                                    if (!pos.street && street && street.match(/[^a-zA-Z]+/)) {
+                                        pos.street = street;
+                                    }
 
-                                console.log('!!!!!', building.match(/\d+/));
-                                if (!pos.building && building && building.match(/\d+/)) {
-                                    pos.building = building;
-                                }
+                                    console.log('!!!!!', building.match(/\d+/));
+                                    if (!pos.building && building && building.match(/\d+/)) {
+                                        pos.building = building;
+                                    }
 
-                                if (pos.street && pos.building) {
-                                    $($input[0]).val(address);
-                                    break;
+                                    if (pos.street && pos.building) {
+                                        $($input[0]).val(pos.street + ' ' + pos.building);
+                                        break;
+                                // }
                                 }
                             }
                             console.log($input[0]);
