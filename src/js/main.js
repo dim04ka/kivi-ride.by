@@ -89,7 +89,7 @@ if (!Math.ceil10) {
                                 }
                             }
 */
-                            $($input[0]).val(res.results[i].formatted_address.split(',')[0]);
+                            $($input[0]).val(res.results[0].formatted_address.split(',')[0]);
 
                             // console.log($input[0]);
                         }
