@@ -64,7 +64,7 @@ if (!Math.ceil10) {
                             var pos = {};
 
                             for (var i = 0; i < res.results.length; i++) {
-                                // if (res.results[i].types.includes('street_address') || res.results[i].types.includes('route')) {
+                                if (res.results[i].types.includes('street_address') || res.results[i].types.includes('route')) {
                                     var address = res.results[i].formatted_address.split(',')[0];
                                     var splitedAddress = address.split(' ');
 
@@ -85,7 +85,7 @@ if (!Math.ceil10) {
                                     if (pos.street && pos.building) {
                                         $($input[0]).val(pos.street + ' ' + pos.building);
                                         break;
-                                // }
+                                    }
                                 }
                             }
                             console.log($input[0]);
