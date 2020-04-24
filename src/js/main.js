@@ -47,57 +47,32 @@ if (!Math.ceil10) {
             var $input = $(this);
             navigator.geolocation.getCurrentPosition(function(position) {
                 var geolocation = {
-                    lat: Math.round10(position.coords.latitude, -7),
-                    lng: Math.round10(position.coords.longitude, -7)
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
                 };
 
-                var url = 'https://maps.googleapis.com/maps/api/geocode/json?language=ru&latlng='
+                var url = 'https://nominatim.openstreetmap.org/reverse?lat='
                     + geolocation.lat
-                    + ','
+                    + '&lon='
                     + geolocation.lng
-                    + '&key=AIzaSyBD-3DkLG3OTtUH9jraldIvZNi1D2oL0Es';
+                    + '&osm_type=N';
 
                 $.ajax(url, {
                     method: 'GET',
                     success: function(res) {
-                        if (res && res.results && res.results.length) {
-                            var pos = {};
-
-/*
-                            for (var i = 0; i < res.results.length; i++) {
-                                if (res.results[i].types.includes('street_address') || res.results[i].types.includes('route')) {
-                                    var address = res.results[i].formatted_address.split(',')[0];
-                                    var splitedAddress = address.split(' ');
-
-                                    var building = splitedAddress.length > 2 ? splitedAddress.splice(splitedAddress.length - 1)[0] : splitedAddress[1].match(/\d+/) ? splitedAddress[1] : '';                                     ;
-                                    var street = splitedAddress.length > 2 || !splitedAddress[1].match(/\d+/) ? splitedAddress.join(' ') : splitedAddress[0];
-
-                                    console.log(street, building);
-                                    console.log('!!!!!', street.match(/[^a-zA-Z]+/));
-                                    if (!pos.street && street && street.match(/[^a-zA-Z]+/)) {
-                                        pos.street = street;
-                                    }
-
-                                    console.log('!!!!!', building.match(/\d+/));
-                                    if (!pos.building && building && building.match(/\d+/)) {
-                                        pos.building = building;
-                                    }
-
-                                    if (pos.street && pos.building) {
-                                        break;
-                                    }
-                                }
-                            }
-*/
-                            $($input[0]).val(res.results[0].formatted_address.split(',')[0]);
-
-                            // console.log($input[0]);
-                        }
-                        console.log(res.results[0].formatted_address.split(',')[0]);
+                        var oSerializer = new XMLSerializer();
+                        var sXML = oSerializer.serializeToString(res);
+                        var domparser = new DOMParser();
+                        var doc = domparser.parseFromString(sXML, "application/xml");
+                        var building = doc.getElementsByTagName('addressparts')[0].getElementsByTagName('house_number')[0].innerHTML;
+                        var street = doc.getElementsByTagName('addressparts')[0].getElementsByTagName('road')[0].innerHTML;
+                        $($input[0]).val(street + ' ' + building);
                     }
                 });
-
-                console.log(geolocation);
+                }, function(positionError) {
+                console.log(positionError);
+            }, {
+                enableHighAccuracy: true
             });
         });
 

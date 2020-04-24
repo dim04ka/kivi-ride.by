@@ -267,7 +267,7 @@
 <script>
 
   function initMap() {
-      var inputs = $('.searchTextField');
+    var inputs = $('.searchTextField');
     var options = {
         componentRestrictions: {country: 'by'}
     };
