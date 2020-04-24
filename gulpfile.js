@@ -67,7 +67,7 @@ gulp.task('fileinclude', (done) => {
         .pipe(fileinclude({
         prefix: '@@',
         }))
-        .pipe(rename({ extname: '.php' }))
+        // .pipe(rename({ extname: '.php' }))
         .pipe(gulp.dest('./'))
         .on('finish', ()=> {
             done();

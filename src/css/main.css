@@ -153,7 +153,7 @@
         display: block;
       }
     }
-    
+
 
     .form {
       padding: 30px 50px;
@@ -176,26 +176,27 @@
           border: none;
           border-bottom: 1px solid rgba(38, 46, 54, 0.2);
           background: transparent;
-          font-size: 16px;
+          font-size: 12px;
           line-height: 19px;
           color: rgba(38, 46, 54, 0.6);
           padding: 5px;
           margin-right: 15px;
           width: 100%;
+          word-wrap: break-word;
 
           @media(max-width: 480px){
             font-size: 12px;
           }
 
           &-podezd {
-            width: 80px;
+            width: 100px;
 
             @media(max-width: 400px){
               width: 60px;
             }
           }
           &-kv {
-            width: 80px;
+            width: 60px;
             @media(max-width: 400px){
               width: 30px;
             }
@@ -207,7 +208,7 @@
           border: none;
           border-bottom: 1px solid rgba(38, 46, 54, 0.2);
           background: transparent;
-          font-size: 16px;
+          font-size: 12px;
           line-height: 19px;
           color: rgba(38, 46, 54, 0.6);
           padding: 5px;
