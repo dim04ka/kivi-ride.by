@@ -122,7 +122,7 @@
   <div class="modal">
       <div class="modal-text">
         <div class="modal-icon"></div>
-        Спасибо, заказ принят
+        Заказ принят! С Вами свяжется ближайший курьер!
       </div>
   </div>
   <div class="video-bg">
@@ -135,6 +135,7 @@
       <div class="main-col main-col-logos">
         <div class="main-title">Двигайся в стиле</div>
         <div class="main-leftLogo"></div>
+        <div class="main-description">Сервис личных курьеров и водителей</div>
         <div class="main-disc">
           Сервис работает в тестовом режиме. Оплата только наличными. Для подробностей звоните менеджеру <a href="tel:375296620272">+375&nbsp;29&nbsp;662&nbsp;02&nbsp;72</a>
         </div>
@@ -165,10 +166,20 @@
                   <button type="button" class="btn-add">Добавить адрес</button>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" name="clientName" placeholder="Ваше имя" required>
+                  <input class="field-input client-name" type="text" maxlength="20" name="clientName" placeholder="Ваше имя" required>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" name="clientPhone" placeholder="+375291234567" required>
+                  <input class="field-input phone-number" type="text" name="clientPhone" required>
+                </div>
+                <div class="field">
+                  <input type="radio" name="cargo" id="cargo1" value="1">
+                  <label class="field-input" for="cargo1">До 5 кг</label>
+                  <input type="radio" name="cargo" id="cargo2" value="2">
+                  <label class="field-input" for="cargo2">5 - 10 кг</label>
+                  <input type="radio" name="cargo" id="cargo3" value="3">
+                  <label class="field-input" for="cargo3">10 - 15 кг</label>
+                  <input type="radio" name="cargo" id="cargo4" value="4">
+                  <label class="field-input" for="cargo4">15 - 20 кг</label>
                 </div>
                 <div class="field">
                   <input class="field-input" type="text" name="time" placeholder="Время доставки с.. по.." required>
@@ -177,7 +188,7 @@
                   <textarea class="field-textarea" type="text" name="comment" placeholder="Напишите, что и когда привезти" rows="2" required></textarea>
                 </div>
                 <div class="field">
-                  <button type="submit" class="btn-send">Отправить заказ</button>
+                  <button type="submit" class="btn-send">7р. Отправить заказ</button>
                 </div>
               </div>
             </form>
@@ -201,10 +212,18 @@
                   <button type="button" class="btn-add">Добавить адрес</button>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" name="clientName" placeholder="Ваше имя" required>
+                  <input class="field-input client-name" type="text" maxlength="20" name="clientName" placeholder="Ваше имя" required>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" name="clientPhone" placeholder="+375291234567" required>
+                  <input class="field-input phone-number" type="text" name="clientPhone" placeholder="+375291234567" required>
+                </div>
+                <div class="field">
+                  <input type="radio" name="cargo" id="cargo5" value="5">
+                  <label class="field-input" for="cargo5">До 20 кг</label>
+                  <input type="radio" name="cargo" id="cargo6" value="6">
+                  <label class="field-input" for="cargo6">20 - 40 кг</label>
+                  <input type="radio" name="cargo" id="cargo7" value="7">
+                  <label class="field-input" for="cargo7">40 - 60 кг</label>
                 </div>
                 <div class="field">
                   <input class="field-input" type="text" name="time" placeholder="Время доставки с.. по.." required>
@@ -213,7 +232,7 @@
                   <textarea class="field-textarea" type="text" name="comment" placeholder="Напишите, что и когда привезти" rows="2" required></textarea>
                 </div>
                 <div class="field">
-                  <button type="submit" class="btn-send">Отправить заказ</button>
+                  <button type="submit" class="btn-send">12,5р. Отправить заказ</button>
                 </div>
               </div>
             </form>
@@ -264,9 +283,21 @@
 </section>
 <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjPHFAzv1EpXDfAcMG-Bcj0QXl2_VfJ2M&libraries=places&callback=initMap" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-  function initMap() {
+<script>
+    $('.phone-number').mask('+375 (00) 000 00 00', {
+        placeholder: "+375 (__) ___ __ __"
+    });
+
+    $('.client-name').mask('AAAAAAAAAAAAAAAAAAAA', {'translation': {
+            A: {
+                pattern: /[А-Яа-я]/
+            }
+        }
+    });
+
+    function initMap() {
     var inputs = $('.searchTextField');
     var options = {
         componentRestrictions: {country: 'by'}
@@ -306,7 +337,7 @@
         <div>Свидетельство о госрегистрации №0158489<br> выдано Минским горисполкомом 28.08.2019г</div>
       </div>
       <div class="footer-col">
-        <div class="footer-up">Время работы администрации<br> Пн-Пт с 11 до 18</div>
+        <div class="footer-up">Время работы администрации<br> Пн-Пт с 9 до 18</div>
         <div>
          <a href="/files/2.pdf" target="_blank" class="footer-download">Пользовательское соглашение</a><br>
          <a href="/files/1.pdf" target="_blank" class="footer-download">Политика конфиденциальности</a><br>

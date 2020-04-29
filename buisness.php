@@ -195,7 +195,7 @@
               <li>- и любой ваш товар.</li>
             </ul>
           </div>
-        </div> 
+        </div>
       <div class="tarif-item">
           <div class="tarif-item-title">Как мы работаем <span class="tarif-item-shape"></span></div>
           <div class="tarif-item-disc">
@@ -236,10 +236,8 @@
           </div>
         </div>
         <p>Мы поможем организовать доставку по Минску и сделать ее одним из показателей успеха в Вашем бизнесе!</p>
-        <p>Отдел по работе с корпоративными клиентами:</p>
-        <ul style="list-style-type: none;">
-          <li><a href="tel:80297007979">+375297007979</a></li>
-        </ul>
+        <p>Отдел по работе с корпоративными клиентами: <a href="tel:80297007979">+375297007979</a></p>
+        <button class="btn-send">Получить коммерческое предложение</button>
       </div>
       <div class="buisness-col">
         <div class="buisness-img buisness-img-2"></div>
@@ -247,6 +245,17 @@
     </div>
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function($) {
+      $('.btn-send').click(function() {
+          window.open('Коммерческое предложение.pdf');
+      });
+  });
+</script>
+
 <section class="footer">
   <div class="container">
     <div class="footer-row footer-row-sb">
@@ -267,7 +276,7 @@
         <div>Свидетельство о госрегистрации №0158489<br> выдано Минским горисполкомом 28.08.2019г</div>
       </div>
       <div class="footer-col">
-        <div class="footer-up">Время работы администрации<br> Пн-Пт с 11 до 18</div>
+        <div class="footer-up">Время работы администрации<br> Пн-Пт с 9 до 18</div>
         <div>
          <a href="/files/2.pdf" target="_blank" class="footer-download">Пользовательское соглашение</a><br>
          <a href="/files/1.pdf" target="_blank" class="footer-download">Политика конфиденциальности</a><br>

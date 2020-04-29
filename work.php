@@ -127,10 +127,10 @@
         <p>Работа с нами — это свобода управлять своим временем и доходом</p>
         <form action="" class="work-form" method="POST">
           <div class="field">
-            <input type="text" class="work-input" name="name" placeholder="Ваше имя" required>
+            <input type="text" class="work-input client-name" name="name" placeholder="Ваше имя" required>
           </div>
           <div class="field">
-            <input type="text" class="work-input" name="phone" placeholder="+375291234567" required>
+            <input type="text" class="work-input phone-number" name="phone" placeholder="+375291234567" required>
           </div>
           <div class="field">
             <select name="sort" class="work-input">
@@ -161,6 +161,25 @@
 </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+<script>
+  $(document).ready(function($) {
+      $('.phone-number').mask('+375 (00) 000 00 00', {
+          placeholder: "+375 (__) ___ __ __"
+      });
+
+      $('.client-name').mask('AAAAAAAAAAAAAAAAAAAA', {'translation': {
+              A: {
+                  pattern: /[А-Яа-я]/
+              }
+          }
+      });
+  });
+
+</script>
+
 <section class="footer">
   <div class="container">
     <div class="footer-row footer-row-sb">
@@ -181,7 +200,7 @@
         <div>Свидетельство о госрегистрации №0158489<br> выдано Минским горисполкомом 28.08.2019г</div>
       </div>
       <div class="footer-col">
-        <div class="footer-up">Время работы администрации<br> Пн-Пт с 11 до 18</div>
+        <div class="footer-up">Время работы администрации<br> Пн-Пт с 9 до 18</div>
         <div>
          <a href="/files/2.pdf" target="_blank" class="footer-download">Пользовательское соглашение</a><br>
          <a href="/files/1.pdf" target="_blank" class="footer-download">Политика конфиденциальности</a><br>
