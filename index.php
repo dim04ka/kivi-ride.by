@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Kivi</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+    <title>Kivi</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -215,7 +219,7 @@
                   <input class="field-input client-name" type="text" maxlength="20" name="clientName" placeholder="Ваше имя" required>
                 </div>
                 <div class="field">
-                  <input class="field-input phone-number" type="text" name="clientPhone" placeholder="+375291234567" required>
+                  <input class="field-input phone-number" type="text" name="clientPhone" required>
                 </div>
                 <div class="field">
                   <input type="radio" name="cargo" id="cargo5" value="5">
@@ -242,22 +246,22 @@
               <input hidden name="type" value="3">
               <div class="form-wrapper">
                 <div class="field">
-                  <input class="field-input taxi-input pickup-point" name="point" type="text" placeholder="Откуда везем " required>
-                  <input class="field-input taxi-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
+                  <input class="field-input pickup-point" name="point" type="text" placeholder="Откуда везем " required>
+                  <input class="field-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
                 </div>
                 <div class="field">
-                  <input class="field-input taxi-input" type="text" name="point" placeholder="Куда везем">
-                  <input class="field-input taxi-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
+                  <input class="field-input" type="text" name="point" placeholder="Куда везем">
+                  <input class="field-input field-input-podezd" name="pointEntrance" type="text" placeholder="Подъезд">
                 </div>
                 <div class="newfield"></div>
                 <div class="field">
                   <button type="button" class="btn-add">Добавить адрес</button>
                 </div>
                 <div class="field">
-                  <input class="field-input taxi-input" type="text" name="clientName" placeholder="Ваше имя" required>
+                  <input class="field-input client-name" type="text" name="clientName" placeholder="Ваше имя" required>
                 </div>
                 <div class="field">
-                  <input class="field-input taxi-input" type="text" name="clientPhone" placeholder="+375291234567" required>
+                  <input class="field-input phone-number" type="text" name="clientPhone" required>
                 </div>
                 <div class="field">
                   <textarea class="field-textarea taxi-input" type="text" name="comment" placeholder="Комментарий к заказу" rows="2" required></textarea>
