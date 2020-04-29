@@ -3,7 +3,7 @@ var $ = require('jquery');
 var jQuery = require('jquery');
 
 (function($){
-        $('.pickup-point').focus(function(e) {
+    $('.pickup-point').focus(function(e) {
             e.preventDefault();
 
             var $input = $(this);
@@ -41,28 +41,48 @@ var jQuery = require('jquery');
         });
 
      $(function(){
-        function counter(){
+         var btn_text = 'Отправить заказ';
+         function counter(){
             var c = 0;
 
             return function(){
-                if (c>5) {
+                if (c > 5) {
                     return
                 }
 
-                $form = $(this).closest('form');
+                var $form = $(this).closest('form');
+                var $btn = $form.find('.btn-send');
                 $wrapper = $form.find('.newfield');
                 var div = document.createElement('div');
                 div.className = "field field-extra";
-                div.setAttribute('index',c);
+                div.setAttribute('index', c);
                 div.innerHTML = "<input class='field-input' type='text' name='point' placeholder='Доставить улица/дом/корпус' required><input class='field-input field-input-podezd' name='pointEntrance' type='text' placeholder='Подъезд/этаж'> <input class='field-input field-input-kv' type='text' name='pointRoom' placeholder='Кв/офис'><button class='del-btn' type='button'>&times;</button>";
 
                 var delBtn = div.querySelector('.del-btn');
                 div.querySelector('.del-btn').addEventListener("click", function() {
                     delBtn.parentElement.remove();
+
+                    if ($form.hasClass('form-send1')) {
+                        $btn.text(c * 7 + 'р. ' + btn_text);
+                    }
+
+                    if ($form.hasClass('form-send2')) {
+                        $btn.text(12.5 + (c - 1) * 8.5 + 'р. ' + btn_text);
+                    }
+
                     c--;
                 });
 
                 $wrapper.append(div);
+
+                if ($form.hasClass('form-send1')) {
+                    $btn.text((c + 2) * 7 + 'р. ' + btn_text);
+                }
+
+                if ($form.hasClass('form-send2')) {
+                    $btn.text(12.5 + (c + 1) * 8.5 + 'р. ' + btn_text);
+                }
+
                 return c++;
             }
         }
@@ -83,8 +103,6 @@ var jQuery = require('jquery');
         })
     })
 
-
-
     $('.form').submit(function(e) {
         e.preventDefault();
 
@@ -102,6 +120,8 @@ var jQuery = require('jquery');
                 body[input.name] = input.value;
             }
         });
+
+        console.log(body);
 
         $.ajax('https://taxi0780.herokuapp.com/api/order-mail', {
             type: 'POST',
@@ -125,14 +145,6 @@ var jQuery = require('jquery');
             }
         })
     });
-
-    $(".form-send1").submit(function(e){
-        e.preventDefault();
-        var $form = $(this);
-
-        var car_in = document.getElementById('car_in');
-        // console.log(car_in.value)
-    })
 
     // вкладки на главной
     function formtabs() {
@@ -204,8 +216,8 @@ var jQuery = require('jquery');
         });
 
 
-        $.ajax('https://taxi0780.herokuapp.com/api/work-mail', {
-            type:     "POST",
+        $.ajax('http://localhost:8080/api/work-mail', {
+            type: "POST",
             data: body,
             success: function() {
                 $form[0].reset();
