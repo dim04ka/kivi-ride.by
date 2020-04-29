@@ -1,6 +1,6 @@
 .main{
 
-    height: 688px;
+    height: 750px;
     /* background-image: url(../src/img/speed2.png); */
     background-position: center;
     background-repeat: no-repeat;
@@ -89,6 +89,26 @@
       }
     }
 
+    &-description {
+       font-weight: bold;
+       font-size: 25px;
+       line-height: 70px;
+       color: #FFFFFF;
+       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+       padding-top: 15px;
+       margin-bottom: 30px;
+
+      @media(max-width:1023px){
+        padding-top: 0px;
+        text-align: center;
+      }
+
+      @media(max-width: 480px) {
+        font-size: 34px;
+        margin-bottom: 0px;
+      }
+    }
+
     &-leftLogo {
       width: 374px;
       height: 77px;
@@ -117,7 +137,7 @@
     }
 
     .tablinks {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 21px;
       background: rgba(255,255,255,.5);
       border: none;
@@ -164,12 +184,8 @@
     }
 
     .form-wrapper {
-      max-height: 470px;
+      max-height: 670px;
       overflow-y: auto
-    }
-
-    .field-extra {
-      width: 105%;
     }
 
     .field {
@@ -256,10 +272,6 @@
       &:hover {
         box-shadow: 0px 0px 8px rgba(4, 87, 123, 0.7);
       }
-    }
-
-    .del-btn {
-      margin-left: 0px;
     }
 
     .main-downBlock {

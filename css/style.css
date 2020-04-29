@@ -118,7 +118,7 @@
 }
 .main{
 
-    height: 688px;
+    height: 750px;
     /* background-image: url(../src/img/speed2.png); */
     background-position: center;
     background-repeat: no-repeat;
@@ -212,6 +212,29 @@
         margin-bottom: 0px
     }
       }
+.main-description {
+       font-weight: bold;
+       font-size: 1.5625rem;
+       line-height: 4.375rem;
+       color: #FFFFFF;
+       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+       padding-top: 15px;
+       margin-bottom: 30px
+    }
+@media(max-width:1023px){
+
+    .main-description {
+        padding-top: 0px;
+        text-align: center
+    }
+      }
+@media(max-width: 480px) {
+
+    .main-description {
+        font-size: 2.125rem;
+        margin-bottom: 0px
+    }
+      }
 .main-leftLogo {
       width: 374px;
       height: 77px;
@@ -245,7 +268,7 @@
     }
       }
 .main .tablinks {
-      font-size: 1.125rem;
+      font-size: 1rem;
       line-height: 1.3125rem;
       background: rgba(255,255,255,.5);
       border: none;
@@ -291,11 +314,8 @@
     }
       }
 .main .form-wrapper {
-      max-height: 470px;
+      max-height: 670px;
       overflow-y: auto
-    }
-.main .field-extra {
-      width: 105%;
     }
 .main .field {
       display: flex;
@@ -383,9 +403,6 @@
 .main .btn-send:hover {
         box-shadow: 0px 0px 8px rgba(4, 87, 123, 0.7);
       }
-.main .del-btn {
-      margin-left: 0px;
-    }
 .main .main-downBlock {
 
       background: rgba(255, 255, 255, 0.7);
@@ -660,6 +677,7 @@
 .buisness {
   padding: 20px 0;
   background: rgba(204, 234, 247, 0.5);
+
 }
 .buisness h1 {
     font-family: Roboto;
@@ -735,6 +753,26 @@
     }
 .buisness-img-2 {
       background-image: url(../src/img/buisnes2.png);
+    }
+.buisness .btn-send {
+    width: 360px;
+    height: 56px;
+    background: linear-gradient(152.48deg, #0D87BD 31.2%, #84B85C 103.64%), #04577B;
+    box-shadow: 0px 0px 8px rgba(4, 87, 123, 0.2);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.3s
+  }
+.buisness .btn-send:hover {
+       box-shadow: 0px 0px 8px rgba(4, 87, 123, 0.7);
     }
 .news {
   padding: 20px 0;
