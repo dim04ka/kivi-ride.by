@@ -21,7 +21,6 @@
         </div>
       </div>
       <div class="main-col main-col-form">
-
           <div class="tab">
             <button class="tablinks active" value="devilery">Пеший курьер</button>
             <button class="tablinks" value="devilerytaxi">Доставка</button>
@@ -63,19 +62,7 @@
                   <label class="field-input" for="cargo4">15 - 20 кг</label>
                 </div>
                 <div class="field">
-                  <div class="dropdown field-input">
-                    <div class="select">
-                      <span> Сегодня </span>
-                      <i class="fa fa-chevron-left"></i>
-                    </div>
-                    <input type="hidden" name="time" value="today">
-                    <ul class="dropdown-menu">
-                      <li id="vod-taxi">Водитель такси</li>
-                      <li id="vod-cour">Водитель-курьер</li>
-                      <li id="vod-taxi-cour">Водитель такси-курьер</li>
-                      <li id="cur">Пеший курьер</li>
-                    </ul>
-                  </div>
+                  <input class="field-input" type="text" name="time" placeholder="Время доставки с.. по.." required>
                 </div>
                 <div class="field">
                   <textarea class="field-textarea" type="text" name="comment" placeholder="Напишите, что и когда привезти" rows="2" required></textarea>
