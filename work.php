@@ -137,7 +137,7 @@
             <input type="text" class="work-input phone-number" name="phone" placeholder="+375291234567" required>
           </div>
           <div class="field">
-            <select name="sort" class="work-input">
+            <select name="sort">
               <option value="vod-taxi">Водитель такси</option>
               <option value="vod-cour">Водитель-курьер</option>
               <option value="vod-taxi-cour">Водитель такси-курьер</option>

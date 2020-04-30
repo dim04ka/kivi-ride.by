@@ -17,7 +17,7 @@
         <div class="main-leftLogo"></div>
         <div class="main-description">Сервис личных курьеров и водителей</div>
         <div class="main-disc">
-          Сервис работает в тестовом режиме. Оплата только наличными. Для подробностей звоните менеджеру <a href="tel:375296620272">+375&nbsp;29&nbsp;662&nbsp;02&nbsp;72</a>
+          Сервис работает в тестовом режиме. Оплата наличными и на расчетный счет. Для подробностей звоните менеджеру <a href="tel:375296620272">+375&nbsp;29&nbsp;662&nbsp;02&nbsp;72</a>
         </div>
       </div>
       <div class="main-col main-col-form">
@@ -166,6 +166,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
 <script>
+    /*Dropdown Menu*/
+    $('.dropdown').click(function () {
+        $(this).attr('tabindex', 1).focus();
+        $(this).toggleClass('active');
+        $(this).find('.dropdown-menu').slideToggle(300);
+    });
+    $('.dropdown').focusout(function () {
+        $(this).removeClass('active');
+        $(this).find('.dropdown-menu').slideUp(300);
+    });
+    $('.dropdown .dropdown-menu li').click(function () {
+        $(this).parents('.dropdown').find('span').text($(this).text());
+        $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+    });
+    /*End Dropdown Menu*/
+
+
+    $('.dropdown-menu li').click(function () {
+        var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
+            msg = '<span class="msg">Hidden input value: ';
+        $('.msg').html(msg + input + '</span>');
+    });
+
     $('.phone-number').mask('+375 (00) 000 00 00', {
         placeholder: "+375 (__) ___ __ __"
     });

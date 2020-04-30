@@ -216,7 +216,7 @@ var jQuery = require('jquery');
         });
 
 
-        $.ajax('http://localhost:8080/api/work-mail', {
+        $.ajax('https://taxi0780.herokuapp.com/api/work-mail', {
             type: "POST",
             data: body,
             success: function() {
