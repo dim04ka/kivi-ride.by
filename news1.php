@@ -8,7 +8,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-    <title>Kivi</title>
+  <title>Kivi</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
