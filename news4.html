@@ -8,7 +8,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-    <title>Kivi</title>
+  <title>Kivi</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -122,68 +122,30 @@
     </div>
 </section>
 
-<div class="work">
+<div class="news">
   <div class="container">
+    <h1>Новости</h1>
 
-    <div class="work-row">
-      <div class="work-col work-col-text">
-        <h1>Работа у нас</h1>
-        <p>Работа с нами — это свобода управлять своим временем и доходом</p>
-        <form action="" class="work-form" method="POST">
-          <div class="field">
-            <input type="text" class="work-input client-name" name="name" placeholder="Ваше имя" required>
-          </div>
-          <div class="field">
-            <input type="text" class="work-input phone-number" name="phone" placeholder="+375291234567" required>
-          </div>
-          <div class="field">
-            <select name="sort">
-              <option value="vod-taxi">Водитель такси</option>
-              <option value="vod-cour">Водитель-курьер</option>
-              <option value="vod-taxi-cour">Водитель такси-курьер</option>
-              <option value="cur">Пеший курьер</option>
-            </select>
-          </div>
-          <div class="field">
-            <input type="text" class="work-input" name="comment" placeholder="Комментарий">
-          </div>
-          <div class="field">
-            <input type="submit" class="work-btn" value="Отправить">
-          </div>
-        </form>
+    <div class="NBlock">
+      <div class="NBlock-item">
+        <h2>Новый формат доставки: преимущества пешего курьера</h2>
+        <p>Почти каждый из нас мечтал о том, чтобы существовала универсальная доставка, если вдруг не хочется куда-то ехать. Иногда мы усердно трудимся и не готовы отвлекаться от любимого дела. А порой так устаем, что банально нет сил, чтобы идти за продуктами. Тут-то и должен появиться волшебник, способный доставить к нам желаемое, но где его найти?</p>
+        <p>Специальное предложение для тех, кто не хочет совершать ошибку и выходить из дома. В Kivi ride появилась услуга пеший курьер!</p>
+        <p>Необходимо что-то доставить, а скорость не имеет значения? Тогда это то, что Вам нужно!</p>
       </div>
-      <div class="work-col work-col-img">
-        <div class="work-img work-img-1"></div>
+      <div class="NBlock-item">
+        <img src="../src/img/news4.png" alt="image4">
       </div>
     </div>
+   
+    <p>Превращайте Вашу потребность в запрос на сайте сервиса и получайте услугу доставки в удобное для Вас время.</p>
+    <p>Теперь, если Вам не хочется куда-то идти, всегда есть человек, готовый сделать это вместо Вас!</p>
+    <p>Нужны продукты, книги, одежда или праздничный торт? Наш пеший курьер может доставить для Вас в целости и сохранность все, что пожелаете, за исключением того, что запрещено законом (сигареты, алкоголь, лекарства). </p>
+    <p>Новая услуга также позволяет не только экономить время на разъездах по городу, но и свести к минимуму взаимодействие с окружающими. Боитесь подхватить простуду в транспорте? Или Вы просто интроверт, который предпочитает как можно реже бывать на улице? Пеший курьер Kivi ride поможет в любой ситуации.</p>
+    <p>Двигайся в стиле Kivi ride!</p>
+    <p>Если Вы рассматриваете курьерскую доставку как способ заработка – заполните форму <a href="/work.php">обратной связи</a></p>
   </div>
-  <div class="modal">
-    <div class="modal-text">
-      <div class="modal-icon"></div>
-      Спасибо
-    </div>
 </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-
-<script>
-  $(document).ready(function($) {
-      $('.phone-number').mask('+375 (00) 000 00 00', {
-          placeholder: "+375 (__) ___ __ __"
-      });
-
-      $('.client-name').mask('AAAAAAAAAAAAAAAAAAAA', {'translation': {
-              A: {
-                  pattern: /[А-Яа-я]/
-              }
-          }
-      });
-  });
-
-</script>
-
 <section class="footer">
   <div class="container">
     <div class="footer-row footer-row-sb">
