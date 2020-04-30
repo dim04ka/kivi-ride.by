@@ -8,7 +8,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-    <title>Kivi</title>
+  <title>Kivi</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -131,19 +131,34 @@
         <p>Работа с нами — это свобода управлять своим временем и доходом</p>
         <form action="" class="work-form" method="POST">
           <div class="field">
-            <input type="text" class="work-input client-name" name="name" placeholder="Ваше имя" required>
+            <input type="text" class="work-input client-name" name="name" maxlength="20" placeholder="Ваше имя" required>
           </div>
           <div class="field">
-            <input type="text" class="work-input phone-number" name="phone" placeholder="+375291234567" required>
+            <input type="text" class="work-input phone-number" name="phone" required>
           </div>
           <div class="field">
+            <div class="dropdown work-input">
+              <div class="select">
+                <span> Выберите вид деятельности </span>
+                <i class="fa fa-chevron-left"></i>
+              </div>
+              <input type="hidden" name="sort">
+              <ul class="dropdown-menu">
+                <li id="vod-taxi">Водитель такси</li>
+                <li id="vod-cour">Водитель-курьер</li>
+                <li id="vod-taxi-cour">Водитель такси-курьер</li>
+                <li id="cur">Пеший курьер</li>
+              </ul>
+            </div>
+          </div>
+          <!--div class="custom-select">
             <select name="sort">
               <option value="vod-taxi">Водитель такси</option>
               <option value="vod-cour">Водитель-курьер</option>
               <option value="vod-taxi-cour">Водитель такси-курьер</option>
               <option value="cur">Пеший курьер</option>
             </select>
-          </div>
+          </div-->
           <div class="field">
             <input type="text" class="work-input" name="comment" placeholder="Комментарий">
           </div>
@@ -170,6 +185,29 @@
 
 <script>
   $(document).ready(function($) {
+      /*Dropdown Menu*/
+      $('.dropdown').click(function () {
+          $(this).attr('tabindex', 1).focus();
+          $(this).toggleClass('active');
+          $(this).find('.dropdown-menu').slideToggle(300);
+      });
+      $('.dropdown').focusout(function () {
+          $(this).removeClass('active');
+          $(this).find('.dropdown-menu').slideUp(300);
+      });
+      $('.dropdown .dropdown-menu li').click(function () {
+          $(this).parents('.dropdown').find('span').text($(this).text());
+          $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+      });
+      /*End Dropdown Menu*/
+
+
+      $('.dropdown-menu li').click(function () {
+          var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
+              msg = '<span class="msg">Hidden input value: ';
+          $('.msg').html(msg + input + '</span>');
+      });
+
       $('.phone-number').mask('+375 (00) 000 00 00', {
           placeholder: "+375 (__) ___ __ __"
       });
