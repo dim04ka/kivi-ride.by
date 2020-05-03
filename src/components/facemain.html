@@ -281,12 +281,36 @@
         $('.date').each(function(i, elem) {
             elem.innerHTML = liArray;
             $(elem).parents('.dropdown').find('input').attr('value', moment().format('DD MMMM'));
+            $(elem).select(function() {
+                liArray = '';
+
+                for (var i = 0; i <= 48; i++) {
+                    var date = moment().startOf('day').add(i * 30, 'minutes').format('HH:mm');
+
+                    liArray += '<li id=\"' + date  + '\"> ' + date + ' </li>';
+                }
+
+                $('.minF').each(function(i, elem) {
+                    elem.innerHTML = '<li id=\"Сейчас\">Сейчас</li>' + liArray;
+                });
+            });
         });
 
         liArray = '';
 
+        var startHour = moment().format('HH');
+        var startMinutes = moment().format('mm');
+
+        if (+startMinutes < 50) {
+            startHour = +startHour + 1;
+            startMinutes = '00';
+        } else {
+            startHour = +startHour + 1;
+            startMinutes = '30';
+        }
+
         for (var i = 0; i <= 48; i++) {
-            var date = moment().startOf('day').add(i * 30, 'minutes').format('HH:mm');
+            var date = moment(startHour + ':' + startMinutes, 'HH:mm').add(i * 30, 'minutes').format('HH:mm');
 
             liArray += '<li id=\"' + date  + '\"> ' + date + ' </li>';
         }
@@ -304,6 +328,59 @@
         $('.dropdown .dropdown-menu li').click(function () {
             $(this).parents('.dropdown').find('span').text($(this).text());
             $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+
+            if ($(this).parents('.dropdown').find('.date') !== null) {
+                if ($(this).attr('id') === moment().format('DD MMMM')) {
+                    liArray = '';
+
+                    var startHour = moment().format('HH');
+                    var startMinutes = moment().format('mm');
+
+                    if (+startMinutes < 50 && +startMinutes >= 20) {
+                        startHour = +startHour + 1;
+                        startMinutes = '00';
+                    } else if (+startMinutes >= 50) {
+                        startHour = +startHour + 1;
+                        startMinutes = '30';
+                    } else if (+startMinutes < 20) {
+                        startMinutes = '30';
+                    }
+
+                    for (var i = 0; i <= 48; i++) {
+                        var date = moment(startHour + ':' + startMinutes, 'HH:mm').add(i * 30, 'minutes').format('HH:mm');
+
+                        liArray += '<li id=\"' + date  + '\"> ' + date + ' </li>';
+                    }
+
+                    $('.minF').each(function(i, elem) {
+                        elem.innerHTML = '<li id=\"Сейчас\">Сейчас</li>' + liArray;
+                    });
+
+                    $('.minF').parents('.dropdown').find('span').text('Сейчас');
+                    $('.minF').parents('.dropdown').find('input').attr('value', 'Сейчас');
+
+                } else {
+                    liArray = '';
+
+                    for (var i = 0; i <= 48; i++) {
+                        var date = moment().startOf('day').add(i * 30, 'minutes').format('HH:mm');
+
+                        liArray += '<li id=\"' + date  + '\"> ' + date + ' </li>';
+                    }
+
+                    $('.minF').each(function(i, elem) {
+                        elem.innerHTML = liArray;
+                    });
+
+                    $('.minF').parents('.dropdown').find('span').text('00:00');
+                    $('.minF').parents('.dropdown').find('input').attr('value', '00:00');
+                }
+
+                $('.dropdown .dropdown-menu li').click(function () {
+                    $(this).parents('.dropdown').find('span').text($(this).text());
+                    $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+                });
+            }
         });
     });
 
