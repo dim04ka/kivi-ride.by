@@ -301,15 +301,17 @@
         var startHour = moment().format('HH');
         var startMinutes = moment().format('mm');
 
-        if (+startMinutes < 50) {
+        if (+startMinutes < 50 && +startMinutes >= 20) {
             startHour = +startHour + 1;
             startMinutes = '00';
-        } else {
+        } else if (+startMinutes >= 50) {
             startHour = +startHour + 1;
+            startMinutes = '30';
+        } else if (+startMinutes < 20) {
             startMinutes = '30';
         }
 
-        for (var i = 0; i <= 48; i++) {
+        for (var i = 0; i <= 47; i++) {
             var date = moment(startHour + ':' + startMinutes, 'HH:mm').add(i * 30, 'minutes').format('HH:mm');
 
             liArray += '<li id=\"' + date  + '\"> ' + date + ' </li>';
@@ -346,7 +348,7 @@
                         startMinutes = '30';
                     }
 
-                    for (var i = 0; i <= 48; i++) {
+                    for (var i = 0; i <= 47; i++) {
                         var date = moment(startHour + ':' + startMinutes, 'HH:mm').add(i * 30, 'minutes').format('HH:mm');
 
                         if (date === '00:00') break;
