@@ -309,6 +309,13 @@
             elem.innerHTML = '<li id=\"Сейчас\">Сейчас</li>' + liArray;
         });
 
+        liArray = '';
+
+        for (var i = 0; i <= 47; i++) {
+            var date = moment().startOf('day').add(i * 30, 'minutes').format('HH:mm');
+
+            liArray += '<li id=\"' + date  + '\"> ' + date + ' </li>';
+        }
 
         $('.minT').each(function(i, elem) {
             elem.innerHTML = '<li id=\"Неважно\">Неважно</li>' + liArray;
@@ -319,7 +326,8 @@
             $(this).parents('.dropdown').find('span').text($(this).text());
             $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
 
-            if ($(this).parents('.dropdown').find('.date') !== null) {
+            if ($(this).parents('.dropdown').find('.date').length) {
+                console.log($(this).parents('.dropdown').find('.date'));
                 if ($(this).attr('id') === moment().format('DD MMMM')) {
                     liArray = '';
 
