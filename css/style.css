@@ -476,6 +476,9 @@
 }
 /*Styling Selectbox*/
 .dropdown {
+  width: 50%;
+  margin: 5px;
+
   display: inline-block;
   background-color: #fff;
   border-radius: 5px;
@@ -516,9 +519,9 @@
   transform: rotate(-90deg)
 }
 .dropdown .dropdown-menu {
+  width: 100%;
   position: absolute;
   background-color: #fff;
-  width: 100%;
   left: 0;
   margin-top: 1px;
   box-shadow: 0 1px 2px rgb(204, 204, 204);

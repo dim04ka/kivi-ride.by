@@ -186,7 +186,35 @@
                   <label class="field-input" for="cargo4">15 - 20 кг</label>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" name="time" placeholder="Время доставки с.. по.." required>
+                  <div class="dropdown">
+                    <div class="select">
+                      <span> Сегодня </span>
+                      <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="date" value="">
+                    <ul class="dropdown-menu date">
+                    </ul>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="dropdown">
+                    <div class="select">
+                      <span> 00:00 </span>
+                      <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="minF" value="00:00">
+                    <ul class="dropdown-menu minF">
+                    </ul>
+                  </div>
+                  <div class="dropdown">
+                    <div class="select">
+                      <span> 00:00 </span>
+                      <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="minT" value="00:00">
+                    <ul class="dropdown-menu minT">
+                    </ul>
+                  </div>
                 </div>
                 <div class="field">
                   <textarea class="field-textarea" type="text" name="comment" placeholder="Напишите, что и когда привезти" rows="2" required></textarea>
@@ -230,7 +258,35 @@
                   <label class="field-input" for="cargo7">40 - 60 кг</label>
                 </div>
                 <div class="field">
-                  <input class="field-input" type="text" name="time" placeholder="Время доставки с.. по.." required>
+                  <div class="dropdown">
+                    <div class="select">
+                      <span> Сегодня </span>
+                      <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="date" value="">
+                    <ul class="dropdown-menu date">
+                    </ul>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="dropdown">
+                    <div class="select">
+                      <span> 00:00 </span>
+                      <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="minF" value="00:00">
+                    <ul class="dropdown-menu minF">
+                    </ul>
+                  </div>
+                  <div class="dropdown">
+                    <div class="select">
+                      <span> 00:00 </span>
+                      <i class="fa fa-chevron-left"></i>
+                    </div>
+                    <input type="hidden" name="minT" value="00:00">
+                    <ul class="dropdown-menu minT">
+                    </ul>
+                  </div>
                 </div>
                 <div class="field">
                   <textarea class="field-textarea" type="text" name="comment" placeholder="Напишите, что и когда привезти" rows="2" required></textarea>
@@ -267,7 +323,7 @@
                   <textarea class="field-textarea taxi-input" type="text" name="comment" placeholder="Комментарий к заказу" rows="2" required></textarea>
                 </div>
                 <div class="field">
-                  <button type="submit" class="btn-send">Вызвать такси</button>
+                  <button type="submit" class="btn-send">Такси от 3.3 рублей</button>
                 </div>
               </div>
             </form>
@@ -288,6 +344,8 @@
 <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjPHFAzv1EpXDfAcMG-Bcj0QXl2_VfJ2M&libraries=places&callback=initMap" async defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/locale/ru.min.js"></script>
 
 <script>
     /*Dropdown Menu*/
@@ -306,12 +364,6 @@
     });
     /*End Dropdown Menu*/
 
-
-    $('.dropdown-menu li').click(function () {
-        var input = '<strong>' + $(this).parents('.dropdown').find('input').val() + '</strong>',
-            msg = '<span class="msg">Hidden input value: ';
-        $('.msg').html(msg + input + '</span>');
-    });
 
     $('.phone-number').mask('+375 (00) 000 00 00', {
         placeholder: "+375 (__) ___ __ __"
@@ -336,11 +388,50 @@
 
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
-        console.log(place.geometry.location.lat());
-        console.log(place.geometry.location.lng());
         });
     });
   }
+
+
+    $(document).ready(function() {
+        var liArray = '';
+
+        for (var i = 0; i <= 7; i++) {
+            var date = moment().add(i, 'days').format('DD MMMM');
+
+            liArray += '<li id=\"' + date + '\"> ' + (i ? date : 'Сегодня') + ' </li>';
+        }
+
+        $('.date').each(function(i, elem) {
+            elem.innerHTML = liArray;
+            $(elem).parents('.dropdown').find('input').attr('value', moment().format('DD MMMM'));
+        });
+
+        liArray = '';
+
+        for (var i = 0; i <= 48; i++) {
+            var date = moment().startOf('day').add(i * 30, 'minutes').format('HH:mm');
+
+            liArray += '<li id=\"' + date  + '\"> ' + date + ' </li>';
+        }
+
+        $('.minF').each(function(i, elem) {
+            elem.innerHTML = liArray;
+        });
+
+
+        $('.minT').each(function(i, elem) {
+            elem.innerHTML = liArray;
+        });
+
+
+        $('.dropdown .dropdown-menu li').click(function () {
+            $(this).parents('.dropdown').find('span').text($(this).text());
+            $(this).parents('.dropdown').find('input').attr('value', $(this).attr('id'));
+        });
+    });
+
+
 
 </script>
 

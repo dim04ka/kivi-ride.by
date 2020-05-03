@@ -121,8 +121,6 @@ var jQuery = require('jquery');
             }
         });
 
-        console.log(body);
-
         $.ajax('https://taxi0780.herokuapp.com/api/order-mail', {
             type: 'POST',
             data: body,
