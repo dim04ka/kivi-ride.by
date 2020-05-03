@@ -473,6 +473,7 @@
                     for (var i = 0; i <= 48; i++) {
                         var date = moment(startHour + ':' + startMinutes, 'HH:mm').add(i * 30, 'minutes').format('HH:mm');
 
+                        if (date === '00:00') break;
                         liArray += '<li id=\"' + date  + '\"> ' + date + ' </li>';
                     }
 
