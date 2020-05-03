@@ -199,19 +199,19 @@
                 <div class="field">
                   <div class="dropdown">
                     <div class="select">
-                      <span> 00:00 </span>
+                      <span> Сейчас </span>
                       <i class="fa fa-chevron-left"></i>
                     </div>
-                    <input type="hidden" name="minF" value="00:00">
+                    <input type="hidden" name="minF" value="Сейчас">
                     <ul class="dropdown-menu minF">
                     </ul>
                   </div>
                   <div class="dropdown">
                     <div class="select">
-                      <span> 00:00 </span>
+                      <span> Неважно </span>
                       <i class="fa fa-chevron-left"></i>
                     </div>
-                    <input type="hidden" name="minT" value="00:00">
+                    <input type="hidden" name="minT" value="Неважно">
                     <ul class="dropdown-menu minT">
                     </ul>
                   </div>
@@ -416,12 +416,12 @@
         }
 
         $('.minF').each(function(i, elem) {
-            elem.innerHTML = liArray;
+            elem.innerHTML = '<li id=\"Сейчас\">Сейчас</li>' + liArray;
         });
 
 
         $('.minT').each(function(i, elem) {
-            elem.innerHTML = liArray;
+            elem.innerHTML = '<li id=\"Неважно\">Неважно</li>' + liArray;
         });
 
 
