@@ -281,19 +281,6 @@
         $('.date').each(function(i, elem) {
             elem.innerHTML = liArray;
             $(elem).parents('.dropdown').find('input').attr('value', moment().format('DD MMMM'));
-            $(elem).select(function() {
-                liArray = '';
-
-                for (var i = 0; i <= 48; i++) {
-                    var date = moment().startOf('day').add(i * 30, 'minutes').format('HH:mm');
-
-                    liArray += '<li id=\"' + date  + '\"> ' + date + ' </li>';
-                }
-
-                $('.minF').each(function(i, elem) {
-                    elem.innerHTML = '<li id=\"Сейчас\">Сейчас</li>' + liArray;
-                });
-            });
         });
 
         liArray = '';
@@ -365,7 +352,7 @@
                 } else {
                     liArray = '';
 
-                    for (var i = 0; i <= 48; i++) {
+                    for (var i = 0; i <= 47; i++) {
                         var date = moment().startOf('day').add(i * 30, 'minutes').format('HH:mm');
 
                         liArray += '<li id=\"' + date  + '\"> ' + date + ' </li>';
